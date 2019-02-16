@@ -28,7 +28,7 @@ export const STYLES = StyleSheet.create({
     padding: '10%',
     alignSelf: 'center',
     justifyContent: 'center',
-    marginTop: 30
+    // marginTop: 30
   },
   footerText: {
     width: responsiveWidth(100),
@@ -58,6 +58,7 @@ export const STYLES = StyleSheet.create({
   },
   btns: {
     backgroundColor: THEME_COLOR,
+    marginTop: 30,
   },
   inlineIcons: {
     fontSize: responsiveFontSize(2),

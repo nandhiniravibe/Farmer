@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { responsiveHeight, responsiveWidth,responsiveFontSize } from 'react-native-responsive-dimensions';
 
-export const THEME_COLOR = '#4CC7FF'
+export const THEME_COLOR = '#2198F5'
 export const BACK_GROUND_THEME_COLOR = '#e6e6e6'
 
 export const COMMONSTYLES = StyleSheet.create({

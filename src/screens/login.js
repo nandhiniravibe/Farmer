@@ -7,7 +7,7 @@ import { Card,CardItem,Text,Header,Container,Content,Button,Form,Item,Input,Labe
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight,responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
-import { login,getAllChild } from '../actions';
+// import { login,getAllChild } from '../actions';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -20,7 +20,8 @@ class LoginScreen extends Component {
     this.onBackPress = this.onBackPress.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
+    this.handleSubmitVendor = this.handleSubmitVendor.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -38,12 +39,24 @@ class LoginScreen extends Component {
   handleChangePassword(e) {
     this.setState({ password: e });
   };
-  handleSubmit() {
+
+  handleSubmitFarmer() {
     const { email, password } = this.state;
-    if (!email) return alert("Please enter Email");
+    if (!email) return alert("Please enter Phone number");
     if (!password) return alert("Please enter Password");
     if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("MyFamilyScreen")
+        this.props.navigation.navigate("HomeFarmerScreen")
+    } else {
+      alert(' Please fill out all fields ')
+    }
+  }
+
+  handleSubmitVendor() {
+    const { email, password } = this.state;
+    if (!email) return alert("Please enter Phone number");
+    if (!password) return alert("Please enter Password");
+    if (email == '9876543210' && password == '123456') {
+        this.props.navigation.navigate("HomeVendorScreen")
     } else {
       alert(' Please fill out all fields ')
     }
@@ -65,7 +78,7 @@ class LoginScreen extends Component {
         <Content>
           <Card transparent style={STYLES.container}>
             <CardItem>
-              <Text style={{ fontSize: responsiveFontSize(2) }}>Welcome to</Text>
+              {/* <Text style={{ fontSize: responsiveFontSize(2) }}>Welcome to</Text> */}
             </CardItem>
             <CardItem>
               <View>
@@ -82,7 +95,8 @@ class LoginScreen extends Component {
             <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(7) }}
-              placeholder="Email"
+              placeholder="Phone number"
+              keyboardType = 'numeric'
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeEmail}
             />
@@ -100,16 +114,17 @@ class LoginScreen extends Component {
               onPress={() => this.setState({ showPassword: !this.state.showPassword })} />
           </View>
           <View style={STYLES.btnView}>
-            <Button block success style={STYLES.btns} onPress={this.handleSubmit}>
-              <Text>SIGN IN</Text>
+            <Button block success style={STYLES.btns} onPress={this.handleSubmitFarmer}>
+              <Text>SIGN IN AS FARMER</Text>
+            </Button>
+            <Button block success style={STYLES.btns} onPress={this.handleSubmitVendor}>
+              <Text>SIGN IN AS VENDOR</Text>
             </Button>
             <Text style={STYLES.forgotPassword}
-              onPress={() => this.props.navigation.navigate('ForgotScreen')}>
+              onPress={() => this.props.navigation.navigate('ForgotScreen')}
+              >
               Forgot Password ?
             </Text>
-            <Button block success style={STYLES.btns} onPress={() => this.props.navigation.navigate('RegistrationScreen')}>
-              <Text>SIGN UP</Text>
-            </Button>
           </View>
         </Content>
       </Container>
@@ -119,13 +134,13 @@ class LoginScreen extends Component {
 
 
 LoginScreen.propTypes = {
-  login: PropTypes.func.isRequired,
-  getAllChild: PropTypes.func.isRequired,
+  // login: PropTypes.func.isRequired,
+  // getAllChild: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  login,
-  getAllChild
+  // login,
+  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

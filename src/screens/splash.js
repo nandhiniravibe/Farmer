@@ -12,6 +12,7 @@ class SplashScreen extends Component {
         this.props.navigation.navigate('WelcomeScreen');
     }, 2000);
   }
+  
   render() {
     return (
       <Card transparent style={STYLES.container}>

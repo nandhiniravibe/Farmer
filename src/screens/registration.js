@@ -7,7 +7,7 @@ import {Card,CardItem,Text,Container,Content,Button,Form,Item,Input,Label,Icon,H
 import { STYLES } from '../styles/registration';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
-import {userRegistration,login,getAllRelationships,} from '../actions';
+// import {userRegistration,login,getAllRelationships,} from '../actions';
 
 class RegistrationScreen extends Component {
   constructor(props) {
@@ -70,15 +70,15 @@ class RegistrationScreen extends Component {
     })
   };
 
-  loadAllRelations() {
-    const { relationships } = this.props.reducerObj;
-    const opitionsArr = [];
-    opitionsArr.push(<Picker.Item label="Select Relationship" value="0" />);
-    relationships.map((item, index) => {
-      opitionsArr.push(<Picker.Item key={index} label={item.relation} value={item.relationship_type} />)
-    });
-    return opitionsArr;
-  }
+  // loadAllRelations() {
+  //   const { relationships } = this.props.reducerObj;
+  //   const opitionsArr = [];
+  //   opitionsArr.push(<Picker.Item label="Select Relationship" value="0" />);
+  //   relationships.map((item, index) => {
+  //     opitionsArr.push(<Picker.Item key={index} label={item.relation} value={item.relationship_type} />)
+  //   });
+  //   return opitionsArr;
+  // }
 
   handleChangePassword(e) {
     if (e && e.length >= 5) {
@@ -97,40 +97,14 @@ class RegistrationScreen extends Component {
 
   handleSubmit() {
     const { fname, lname, email, password, showPasswordErrorMsg, showIncorrectEmailErrorMsg, showEmailErrorMsg, selectedRelationship } = this.state;
-    if (!fname) return alert("Please enter First Name");
-    if (!email) return alert("Please enter Email");
+    if (!fname) return alert("Please enter Name");
+    if (!lname) return alert("Please enter Phone number")
     if (!password) return alert("Please enter Password");
-    if (showEmailErrorMsg) return alert("Email Already exists");
-    if (showIncorrectEmailErrorMsg) return alert("Please enter valid Email");
-    if (fname && email && password) {
-      const queryParams = {
-        fname,
-        lname: '',
-        email,
-        password,
-        gender: selectedRelationship || '',
-        image_id: '',
-        isActive: true,
-        created_date: new Date().toISOString(),
-        last_login: new Date().toISOString(),
-      };
-      this.setState({ showSpinner: true });
-      this.props.userRegistration(queryParams).then(res => {
-        const { value: { success, data } } = res;
-        const child = 0
-        if (success) {
+
+    // if (showIncorrectEmailErrorMsg) return alert("Please enter valid Email");
+    if (fname && lname && password) {
           this.setState({ showSpinner: false });
-          const { parent_id, family_id, email, isActive, fname, lname } = data;
-          AsyncStorage.setItem('user_id', parent_id.toString());
-          AsyncStorage.setItem('family_id', family_id.toString());
-          AsyncStorage.setItem('email', email);
-          AsyncStorage.setItem('isActive', isActive.toString());
-          AsyncStorage.setItem('fname', fname);
-          AsyncStorage.setItem('lname', lname);
-          AsyncStorage.setItem('child', child.toString());
-          this.props.navigation.navigate("MyFamilyScreen")
-        }
-      })
+          this.props.navigation.navigate("LoginScreen")
     } else {
       alert(' Please fill out all fields');
       this.setState({ showSpinner: false });
@@ -171,7 +145,7 @@ class RegistrationScreen extends Component {
             <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(6) }}
-              placeholder="First Name"
+              placeholder="Name"
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeFirstname}
             />
@@ -180,7 +154,8 @@ class RegistrationScreen extends Component {
             <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(6) }}
-              placeholder="Last Name"
+              placeholder="Phone number"
+              keyboardType = 'numeric'
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeLastname}
             />
@@ -192,7 +167,7 @@ class RegistrationScreen extends Component {
               placeholder="Email"
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeEmail}
-              onBlur={(e) => { this.checkIsValidEmail(), this.checkIsEmailUnique() }}
+              onBlur={(e) => { this.checkIsValidEmail() }}
             />
           </View>
           {this.state.showEmailErrorMsg && <View style={{ marginLeft: responsiveWidth(10) }}>
@@ -225,18 +200,19 @@ class RegistrationScreen extends Component {
               placeholderIconColor="#007aff"
               style={{ width: undefined }}
               selectedValue={this.state.selectedRelationship}
-              onValueChange={(e) => this.setState({ selectedRelationship: e })}
+              onValueChange={(e) => this.setState({ selectedRelationship: e })}            
             >
-              {this.loadAllRelations()}
+            <Item label="Vendor" value="key1" />
+            <Item label="Farmer" value="key2" />
             </Picker>
           </View>
           <View style={STYLES.btnView}>
             <Button block success style={STYLES.btns} onPress={this.handleSubmit}>
               <Text>SIGN UP</Text>
             </Button>
-            <Button block success style={STYLES.btns1} onPress={() => this.props.navigation.navigate('LoginScreen')}>
-              <Text>SIGN IN</Text>
-            </Button>
+            {/* <Button block success style={STYLES.btns1} onPress={this.handleSubmit}>
+              <Text>SIGN UP AS VENDOR</Text>
+            </Button> */}
           </View>
         </Content>
       </Container>
