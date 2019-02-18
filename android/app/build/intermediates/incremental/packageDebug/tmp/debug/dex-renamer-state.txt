@@ -1,4 +1,4 @@
-#Sat Feb 16 16:37:00 IST 2019
-base.0=/Users/antony/Documents/Hari/Agri/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Sun Feb 17 11:53:38 IST 2019
+base.0=C\:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

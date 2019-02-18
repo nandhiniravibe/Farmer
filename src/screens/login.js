@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { View,ImageBackground,BackHandler,TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
-import { Card,CardItem,Text,Header,Container,Content,Button,Form,Item,Input,Label,Icon,Left,Body,Spinner} from 'native-base';
+import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
+import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
-import { responsiveHeight,responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 // import { login,getAllChild } from '../actions';
 
 class LoginScreen extends Component {
@@ -44,8 +44,8 @@ class LoginScreen extends Component {
     const { email, password } = this.state;
     if (!email) return alert("Please enter Phone number");
     if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("HomeFarmerScreen")
+    if (email == '1' && password == '1') {
+      this.props.navigation.navigate("HomeFarmerScreen")
     } else {
       alert(' Please fill out all fields ')
     }
@@ -56,7 +56,7 @@ class LoginScreen extends Component {
     if (!email) return alert("Please enter Phone number");
     if (!password) return alert("Please enter Password");
     if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("HomeVendorScreen")
+      this.props.navigation.navigate("HomeVendorScreen")
     } else {
       alert(' Please fill out all fields ')
     }
@@ -96,7 +96,7 @@ class LoginScreen extends Component {
             <TextInput
               style={{ flex: 1, height: responsiveHeight(7) }}
               placeholder="Phone number"
-              keyboardType = 'numeric'
+              keyboardType='numeric'
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeEmail}
             />
@@ -122,7 +122,7 @@ class LoginScreen extends Component {
             </Button>
             <Text style={STYLES.forgotPassword}
               onPress={() => this.props.navigation.navigate('ForgotScreen')}
-              >
+            >
               Forgot Password ?
             </Text>
           </View>
