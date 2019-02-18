@@ -9,6 +9,11 @@ import RegistrationScreen from '../screens/registration';
 import ForgotScreen from '../screens/forgot'
 import HomeFarmerScreen from '../screens/homeFarmer';
 import HomeVendorScreen from '../screens/homeVendor';
+import PoweredScreen from '../screens/powered';
+import NonPoweredScreen from '../screens/nonPowered';
+import FertilizersScreen from '../screens/fertilizers';
+import SeedsScreen from '../screens/seeds';
+
 
 const ScenesApp = {
   SplashScreen: {
@@ -46,6 +51,30 @@ const ScenesApp = {
 },
   HomeVendorScreen: {
     screen: HomeVendorScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  PoweredScreen: {
+    screen: PoweredScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  NonPoweredScreen: {
+    screen: NonPoweredScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  FertilizersScreen: {
+    screen: FertilizersScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  SeedsScreen: {
+    screen: SeedsScreen,
     navigationOptions: {
       drawerLockMode: 'locked-closed'
   }

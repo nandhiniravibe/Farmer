@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { View,ImageBackground,BackHandler,TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card,CardItem,Text,Header,Container,Content,Button,Form,Item,Input,Label,Icon,Left,Body,Spinner} from 'native-base';
-import { STYLES } from '../styles/login';
+import { STYLES } from '../styles/home';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight,responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 // import { login,getAllChild } from '../actions';
@@ -63,7 +63,20 @@ class HomeFarmerScreen extends Component {
           </Body>
         </Header>
         <Content>
-          
+        <View style={STYLES.btnView}>
+        <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("PoweredScreen")} >
+              <Text>POWERED EQUIPMENTS</Text>
+            </Button>
+            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("NonPoweredScreen")}>
+              <Text>NON-POWERED EQIPMENTS</Text>
+            </Button>
+            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("FertilizersScreen")}>
+              <Text>FERTILIZERS</Text>
+            </Button>
+            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("SeedsScreen")}>
+              <Text>SEEDS</Text>
+            </Button>
+            </View>
         </Content>
       </Container>
     )
