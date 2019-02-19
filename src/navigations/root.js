@@ -19,6 +19,9 @@ import NewsScreen from '../screens/news';
 import SupportScreen from '../screens/support';
 import WhetherScreen from '../screens/whether';
 import InsuranceScreen from '../screens/insurance';
+import EventsScreen from '../screens/events';
+// import CropSelectionScreen from '../screens/cropSelection';
+
 
 const ScenesApp = {
   SplashScreen: {
@@ -97,29 +100,23 @@ const ScenesApp = {
   }
   },
   NewsScreen: {
-    screen: NewsScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
+    screen: NewsScreen
   },
   SupportScreen: {
-    screen: SupportScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
+    screen: SupportScreen
   },
   WhetherScreen: {
-    screen: WhetherScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
+    screen: WhetherScreen
   },
   InsuranceScreen: {
-    screen: InsuranceScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
-  }
+    screen: InsuranceScreen
+  },
+  EventsScreen: {
+    screen: EventsScreen
+  },
+  // CropSelectionScreen: {
+  //   screen: CropSelectionScreen
+  // }
 }
 
 const router = createStackNavigator({

@@ -7,7 +7,7 @@ import { Card,CardItem,Text,Header,Container,Content,Button,Form,Item,Input,Labe
 import { STYLES } from '../styles/home';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight,responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
-// import { login,getAllChild } from '../actions';
+import { FlatGrid } from 'react-native-super-grid';
 
 class HomeAdminScreen extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class HomeAdminScreen extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
   onBackPress = () => {
-    this.props.navigation.navigate('WelcomeScreen');
+    this.props.navigation.navigate('LoginScreen');
     return true;
   };
   handleChangeEmail(e) {
@@ -50,6 +50,44 @@ class HomeAdminScreen extends Component {
   }
 
   render() {
+    const items = [
+      {
+        name: 'ASSISTANT',
+        code: 'rgba(249, 197, 11, 0.72)',
+        icon: "phone",
+        routeName: "EmergencyNotes"
+      },
+      {
+        name: 'NEWS',
+        code: 'rgba(216, 27, 24, 0.78)',
+        icon: "newspaper-o",
+        routeName: "NewsScreen"
+      },
+      {
+        name: 'EVENTS',
+        code: 'rgba(105, 175, 75, 0.77)',
+        icon: "calendar",
+        routeName: "EventsScreen"
+      },
+      {
+        name: 'CROP SELECTION',
+        code: 'rgba(188, 44, 221, 0.73)',
+        icon: "line-chart",
+        routeName: "CropSelectionScreen"
+      },
+      {
+        name: 'WETHER MONITORING',
+        code: 'rgba(33, 160, 171, 0.75)',
+        icon: "tv",
+        routeName: "whetherScreen"
+      },
+      {
+        name: 'INSURANCE',
+        code: 'rgba(40, 125, 215, 0.67)',
+        icon: "book",
+        routeName: "InsuranceScreen"
+      }
+    ];
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -59,24 +97,22 @@ class HomeAdminScreen extends Component {
             </Button>
           </Left>
           <Body style={STYLES.headerText}>
-            <Text style={COMMONSTYLES.header}>FARMER</Text>
+            <Text style={COMMONSTYLES.header}>ADMIN</Text>
           </Body>
         </Header>
         <Content>
-        <View style={STYLES.btnView}>
-        <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("PoweredScreen")} >
-              <Text>POWERED EQUIPMENTS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("NonPoweredScreen")}>
-              <Text>NON-POWERED EQIPMENTS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("FertilizersScreen")}>
-              <Text>FERTILIZERS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("SeedsScreen")}>
-              <Text>SEEDS</Text>
-            </Button>
-            </View>
+        <FlatGrid
+              itemDimension={100}
+              items={items}
+              style={styles.gridView}
+              renderItem={({ item, index }) => (
+                <View style={[styles.itemContainer, { backgroundColor: item.code }]} >
+                  <Icon size={150} name={item.icon} type="FontAwesome" style={{ color: '#fff' }}
+                    onPress={() => this.props.navigation.navigate(item.routeName)} />
+                  <Text style={styles.itemName}>{item.name}</Text>
+                </View>
+              )}
+            />
         </Content>
       </Container>
     )
@@ -93,4 +129,27 @@ const mapStateToProps = state => ({
   reducerObj: state.reducerObj
 });
 
+const styles = StyleSheet.create({
+  gridView: {
+    marginTop: 100,
+    flex: 1,
+  },
+  itemContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 6,
+    padding: 10,
+    height: responsiveHeight(25),
+  },
+  itemName: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: '600',
+  },
+  itemCode: {
+    fontWeight: '600',
+    fontSize: 12,
+    color: '#fff',
+  },
+});
 export default connect(mapStateToProps, mapDispatchToProps)(HomeAdminScreen);

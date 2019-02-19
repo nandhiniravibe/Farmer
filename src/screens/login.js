@@ -43,14 +43,14 @@ class LoginScreen extends Component {
   };
 
   handleSubmitFarmer() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '1' && password == '1') {
+    // const { email, password } = this.state;
+    // if (!email) return alert("Please enter Phone number");
+    // if (!password) return alert("Please enter Password");
+    // if (email == '1' && password == '1') {
       this.props.navigation.navigate("HomeFarmerScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
+    // } else {
+      // alert(' Please fill out all fields ')
+    // }
   }
 
   handleSubmitVendor() {
@@ -65,14 +65,14 @@ class LoginScreen extends Component {
   }
 
   handleSubmitAdmin() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeVendorScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
+    // const { email, password } = this.state;
+    // if (!email) return alert("Please enter Phone number");
+    // if (!password) return alert("Please enter Password");
+    // if (email == '1' && password == '1') {
+      this.props.navigation.navigate("HomeAdminScreen")
+    // } else {
+      // alert(' Please fill out all fields ')
+    // }
   }
 
   render() {
