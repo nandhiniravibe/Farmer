@@ -22,6 +22,8 @@ class LoginScreen extends Component {
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
     this.handleSubmitVendor = this.handleSubmitVendor.bind(this);
+    this.handleSubmitAdmin = this.handleSubmitAdmin.bind(this);
+
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -55,7 +57,18 @@ class LoginScreen extends Component {
     const { email, password } = this.state;
     if (!email) return alert("Please enter Phone number");
     if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
+    if (email == '1' && password == '1') {
+      this.props.navigation.navigate("HomeVendorScreen")
+    } else {
+      alert(' Please fill out all fields ')
+    }
+  }
+
+  handleSubmitAdmin() {
+    const { email, password } = this.state;
+    if (!email) return alert("Please enter Phone number");
+    if (!password) return alert("Please enter Password");
+    if (email == '1' && password == '1') {
       this.props.navigation.navigate("HomeVendorScreen")
     } else {
       alert(' Please fill out all fields ')
@@ -119,6 +132,9 @@ class LoginScreen extends Component {
             </Button>
             <Button block success style={STYLES.btns} onPress={this.handleSubmitVendor}>
               <Text>SIGN IN AS VENDOR</Text>
+            </Button>
+            <Button block success style={STYLES.btns} onPress={this.handleSubmitAdmin}>
+              <Text>SIGN IN AS ADMIN</Text>
             </Button>
             <Text style={STYLES.forgotPassword}
               onPress={() => this.props.navigation.navigate('ForgotScreen')}

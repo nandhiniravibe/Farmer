@@ -9,7 +9,7 @@ import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight,responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 // import { login,getAllChild } from '../actions';
 
-class HomeFarmerScreen extends Component {
+class HomeAdminScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,7 +64,7 @@ class HomeFarmerScreen extends Component {
         </Header>
         <Content>
         <View style={STYLES.btnView}>
-        <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("RecycleScreen")} >
+        <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("PoweredScreen")} >
               <Text>POWERED EQUIPMENTS</Text>
             </Button>
             <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("NonPoweredScreen")}>
@@ -93,4 +93,4 @@ const mapStateToProps = state => ({
   reducerObj: state.reducerObj
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeFarmerScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeAdminScreen);

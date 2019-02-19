@@ -9,11 +9,16 @@ import RegistrationScreen from '../screens/registration';
 import ForgotScreen from '../screens/forgot'
 import HomeFarmerScreen from '../screens/homeFarmer';
 import HomeVendorScreen from '../screens/homeVendor';
+import HomeAdminScreen from '../screens/homeAdmin';
 import PoweredScreen from '../screens/powered';
 import NonPoweredScreen from '../screens/nonPowered';
 import FertilizersScreen from '../screens/fertilizers';
 import SeedsScreen from '../screens/seeds';
-
+import RecycleScreen from '../screens/recycle';
+import NewsScreen from '../screens/news';
+import SupportScreen from '../screens/support';
+import WhetherScreen from '../screens/whether';
+import InsuranceScreen from '../screens/insurance';
 
 const ScenesApp = {
   SplashScreen: {
@@ -55,6 +60,12 @@ const ScenesApp = {
       drawerLockMode: 'locked-closed'
   }
   },
+  HomeAdminScreen: {
+    screen: HomeAdminScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
   PoweredScreen: {
     screen: PoweredScreen,
     navigationOptions: {
@@ -75,6 +86,36 @@ const ScenesApp = {
   },
   SeedsScreen: {
     screen: SeedsScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  RecycleScreen: {
+    screen: RecycleScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  NewsScreen: {
+    screen: NewsScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  SupportScreen: {
+    screen: SupportScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  WhetherScreen: {
+    screen: WhetherScreen,
+    navigationOptions: {
+      drawerLockMode: 'locked-closed'
+  }
+  },
+  InsuranceScreen: {
+    screen: InsuranceScreen,
     navigationOptions: {
       drawerLockMode: 'locked-closed'
   }

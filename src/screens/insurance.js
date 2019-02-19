@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { View,ImageBackground,BackHandler,TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
-import { Card,CardItem,Text,Header,Container,Content,Button,Form,Item,Input,Label,Icon,Left,Body,Spinner} from 'native-base';
-import { STYLES } from '../styles/home';
+import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
+import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Spinner } from 'native-base';
+import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
-import { responsiveHeight,responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
-// import { login,getAllChild } from '../actions';
+import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
-class HomeFarmerScreen extends Component {
+class InsuranceScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +19,7 @@ class HomeFarmerScreen extends Component {
     this.onBackPress = this.onBackPress.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -38,16 +37,18 @@ class HomeFarmerScreen extends Component {
   handleChangePassword(e) {
     this.setState({ password: e });
   };
-  handleSubmit() {
+
+  handleSubmitFarmer() {
     const { email, password } = this.state;
-    if (!email) return alert("Please enter Email");
+    if (!email) return alert("Please enter Phone number");
     if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("MyFamilyScreen")
+    if (email == '1' && password == '1') {
+      this.props.navigation.navigate("HomeFarmerScreen")
     } else {
       alert(' Please fill out all fields ')
     }
   }
+
 
   render() {
     return (
@@ -59,30 +60,15 @@ class HomeFarmerScreen extends Component {
             </Button>
           </Left>
           <Body style={STYLES.headerText}>
-            <Text style={COMMONSTYLES.header}>FARMER</Text>
+            <Text style={COMMONSTYLES.header}>NEWS</Text>
           </Body>
         </Header>
         <Content>
-        <View style={STYLES.btnView}>
-        <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("RecycleScreen")} >
-              <Text>POWERED EQUIPMENTS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("NonPoweredScreen")}>
-              <Text>NON-POWERED EQIPMENTS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("FertilizersScreen")}>
-              <Text>FERTILIZERS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("SeedsScreen")}>
-              <Text>SEEDS</Text>
-            </Button>
-            </View>
         </Content>
       </Container>
     )
   }
 };
-
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   // login,
@@ -93,4 +79,4 @@ const mapStateToProps = state => ({
   reducerObj: state.reducerObj
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeFarmerScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(InsuranceScreen);
