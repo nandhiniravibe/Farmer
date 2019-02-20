@@ -55,7 +55,7 @@ class HomeAdminScreen extends Component {
         name: 'ASSISTANT',
         code: 'rgba(249, 197, 11, 0.72)',
         icon: "phone",
-        routeName: "EmergencyNotes"
+        routeName: "SupportScreen"
       },
       {
         name: 'NEWS',
@@ -79,7 +79,7 @@ class HomeAdminScreen extends Component {
         name: 'WETHER MONITORING',
         code: 'rgba(33, 160, 171, 0.75)',
         icon: "tv",
-        routeName: "whetherScreen"
+        routeName: "WhetherScreen"
       },
       {
         name: 'INSURANCE',

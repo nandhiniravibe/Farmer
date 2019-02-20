@@ -20,7 +20,7 @@ import SupportScreen from '../screens/support';
 import WhetherScreen from '../screens/whether';
 import InsuranceScreen from '../screens/insurance';
 import EventsScreen from '../screens/events';
-// import CropSelectionScreen from '../screens/cropSelection';
+import CropSelectionScreen from '../screens/cropSelection';
 
 
 const ScenesApp = {
@@ -114,9 +114,9 @@ const ScenesApp = {
   EventsScreen: {
     screen: EventsScreen
   },
-  // CropSelectionScreen: {
-  //   screen: CropSelectionScreen
-  // }
+  CropSelectionScreen: {
+    screen: CropSelectionScreen
+  }
 }
 
 const router = createStackNavigator({

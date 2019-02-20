@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
-import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item,Thumbnail, Input, Label, Icon, Left, Body,Right,Switch, Spinner, List, ListItem } from 'native-base';
+import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Thumbnail, Input, Label, Icon, Left, Body, Right, Switch, Spinner, List, ListItem } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
@@ -28,7 +28,7 @@ class SupportScreen extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
   onBackPress = () => {
-    this.props.navigation.navigate('WelcomeScreen');
+    this.props.navigation.navigate('HomeAdminScreen');
     return true;
   };
   handleChangeEmail(e) {
@@ -49,60 +49,79 @@ class SupportScreen extends Component {
     }
   }
 
-
   render() {
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("WelcomeScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>SUPPORT</Text>
           </Body>
+          <Right>
+          <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+              <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
+            </Button>
+          </Right>
         </Header>
         <Content>
-        <ListItem icon>
-            <Left>
-            <Thumbnail source={{ uri: 'Image URL' }} />
-            </Left>
-            <Body>
-              <Text>Airplane Mode</Text>
-            </Body>
-            <Right>
-              <Switch value={false} />
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="wifi" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Wi-Fi</Text>
-            </Body>
-            <Right>
-              <Text>GeekyAnts</Text>
-              <Icon active name="arrow-forward" />
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="bluetooth" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Bluetooth</Text>
-            </Body>
-            <Right>
-              <Text>On</Text>
-              <Icon active name="arrow-forward" />
-            </Right>
-          </ListItem>
+
+          <List>
+            <ListItem avatar>
+              <Left>
+                <Thumbnail source={require('../assets/man.png')} />
+              </Left>
+              <Body>
+                <Text>Contact 1</Text>
+                <Text note>8940480184</Text>
+              </Body>
+              <Right>
+              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+              </Right>
+            </ListItem>
+
+            <ListItem avatar>
+              <Left>
+              <Thumbnail source={require('../assets/man.png')} />
+              </Left>
+              <Body>
+                <Text>Contact 2</Text>
+                <Text note>8940480184</Text>
+              </Body>
+              <Right>
+              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+              </Right>
+            </ListItem>
+
+            <ListItem avatar>
+              <Left>
+              <Thumbnail source={require('../assets/man.png')} />
+              </Left>
+              <Body>
+                <Text>Contact 3</Text>
+                <Text note>8940480184</Text>
+              </Body>
+              <Right>
+              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+              </Right>
+            </ListItem>
+
+            <ListItem avatar>
+              <Left>
+              <Thumbnail source={require('../assets/man.png')} />
+              </Left>
+              <Body>
+                <Text>Contact 4</Text>
+                <Text note>8940480184</Text>
+              </Body>
+              <Right>
+              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+              </Right>
+            </ListItem>
+          </List>
         </Content>
       </Container>
     )
