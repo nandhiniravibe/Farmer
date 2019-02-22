@@ -21,6 +21,8 @@ import WhetherScreen from '../screens/whether';
 import InsuranceScreen from '../screens/insurance';
 import EventsScreen from '../screens/events';
 import CropSelectionScreen from '../screens/cropSelection';
+import ProductsScreen from '../screens/products';
+
 
 
 const ScenesApp = {
@@ -53,51 +55,27 @@ const ScenesApp = {
   },
   HomeFarmerScreen: {
     screen: HomeFarmerScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
 },
   HomeVendorScreen: {
     screen: HomeVendorScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   HomeAdminScreen: {
     screen: HomeAdminScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   PoweredScreen: {
     screen: PoweredScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   NonPoweredScreen: {
     screen: NonPoweredScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   FertilizersScreen: {
     screen: FertilizersScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   SeedsScreen: {
     screen: SeedsScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   RecycleScreen: {
     screen: RecycleScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   NewsScreen: {
     screen: NewsScreen
@@ -116,6 +94,9 @@ const ScenesApp = {
   },
   CropSelectionScreen: {
     screen: CropSelectionScreen
+  },
+  ProductsScreen: {
+    screen: ProductsScreen
   }
 }
 

@@ -26,7 +26,7 @@ class WhetherScreen extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
   onBackPress = () => {
-    this.props.navigation.navigate('WelcomeScreen');
+    this.props.navigation.navigate('HomeAdminScreen');
     return true;
   };
   handleChangeEmail(e) {
@@ -52,7 +52,7 @@ class WhetherScreen extends Component {
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("WelcomeScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>

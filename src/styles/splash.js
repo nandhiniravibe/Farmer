@@ -3,8 +3,8 @@ import { responsiveHeight, responsiveWidth,responsiveFontSize } from 'react-nati
 
 export const STYLES = StyleSheet.create({
     logo: {
-        width: responsiveWidth(100),
-        height: responsiveHeight(40),
+        width: responsiveWidth(60),
+        height: responsiveHeight(50),
     },
     backgroundImage: {
         flex: 1,

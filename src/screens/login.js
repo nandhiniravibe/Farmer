@@ -7,7 +7,6 @@ import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, I
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
-// import { login,getAllChild } from '../actions';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -91,13 +90,10 @@ class LoginScreen extends Component {
         <Content>
           <Card transparent style={STYLES.container}>
             <CardItem>
-              {/* <Text style={{ fontSize: responsiveFontSize(2) }}>Welcome to</Text> */}
-            </CardItem>
-            <CardItem>
               <View>
                 <Image
                   style={STYLES.logo}
-                  source={require("./../assets/logo-home.png")}
+                  source={require("./../assets/tractorIcon.png")}
                   resizeMode={'contain'}
                 />
               </View>

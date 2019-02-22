@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Image,StyleSheet,ImageBackground,AsyncStorage } from 'react-native';
 import { Card,CardItem,Text } from 'native-base'
 import { responsiveHeight, responsiveWidth,responsiveFontSize } from 'react-native-responsive-dimensions';
-import logoImage from './../assets/logo-home.png';
+import logoImage from './../assets/tractorIcon.png';
 import { STYLES } from '../styles/splash';
 
 

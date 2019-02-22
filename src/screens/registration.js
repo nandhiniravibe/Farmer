@@ -70,16 +70,6 @@ class RegistrationScreen extends Component {
     })
   };
 
-  // loadAllRelations() {
-  //   const { relationships } = this.props.reducerObj;
-  //   const opitionsArr = [];
-  //   opitionsArr.push(<Picker.Item label="Select Relationship" value="0" />);
-  //   relationships.map((item, index) => {
-  //     opitionsArr.push(<Picker.Item key={index} label={item.relation} value={item.relationship_type} />)
-  //   });
-  //   return opitionsArr;
-  // }
-
   handleChangePassword(e) {
     if (e && e.length >= 5) {
       return this.setState({ password: e, showPasswordErrorMsg: false, validPassword: true })
@@ -134,7 +124,7 @@ class RegistrationScreen extends Component {
               <View>
                 <Image
                   style={STYLES.logo}
-                  source={require("./../assets/logo-home.png")}
+                  source={require("./../assets/tractorIcon.png")}
                   resizeMode={'contain'}
                 />
               </View>

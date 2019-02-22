@@ -97,7 +97,7 @@ class HomeAdminScreen extends Component {
             </Button>
           </Left>
           <Body style={STYLES.headerText}>
-            <Text style={COMMONSTYLES.header}>ADMIN</Text>
+            <Text style={COMMONSTYLES.header}>HOME</Text>
           </Body>
         </Header>
         <Content>
