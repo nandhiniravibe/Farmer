@@ -26,7 +26,7 @@ class WhetherScreen extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
   onBackPress = () => {
-    this.props.navigation.navigate('HomeAdminScreen');
+    this.props.navigation.navigate('HomeFarmerScreen');
     return true;
   };
   handleChangeEmail(e) {
@@ -52,7 +52,7 @@ class WhetherScreen extends Component {
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
@@ -60,18 +60,18 @@ class WhetherScreen extends Component {
             <Text style={COMMONSTYLES.header}>TODAY'S WHETHER</Text>
           </Body>
           <Right>
-          <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Right>
         </Header>
         <Content>
-       <View>
-       <Image
-                            source={require('../assets/whether.png')}
-                            resizeMode='contain'
-                            style={{ width: responsiveWidth(80), height: responsiveHeight(80), marginLeft : 40}} />
-       </View>
+          <View>
+            <Image
+              source={require('../assets/whether.png')}
+              resizeMode='contain'
+              style={{ width: responsiveWidth(80), height: responsiveHeight(80), marginLeft: 40 }} />
+          </View>
         </Content>
       </Container>
     )
@@ -79,8 +79,6 @@ class WhetherScreen extends Component {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

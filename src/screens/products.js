@@ -17,9 +17,6 @@ class ProductsScreen extends Component {
       password: undefined,
     };
     this.onBackPress = this.onBackPress.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -31,22 +28,6 @@ class ProductsScreen extends Component {
     this.props.navigation.navigate('HomeFarmerScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-  handleSubmit() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Email");
-    if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("MyFamilyScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
 
   render() {
     return (
@@ -75,8 +56,10 @@ class ProductsScreen extends Component {
             <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("SeedsScreen")}>
               <Text>SEEDS</Text>
             </Button>
-            </View>
-             
+            <Button block success style={{marginTop: 30, height: responsiveHeight(10)}} onPress= {() => this.props.navigation.navigate("SeedsScreen")}>
+              <Text>MAINTANANCE / RECYCLE</Text>
+            </Button>
+            </View>      
         </Content>
       </Container>
     )
@@ -85,8 +68,6 @@ class ProductsScreen extends Component {
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

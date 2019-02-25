@@ -16,9 +16,6 @@ class CropSelectionScreen extends Component {
       password: undefined,
     };
     this.onBackPress = this.onBackPress.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -27,41 +24,24 @@ class CropSelectionScreen extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
   onBackPress = () => {
-    this.props.navigation.navigate('HomeAdminScreen');
+    this.props.navigation.navigate('HomeFarmerScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-
-  handleSubmitFarmer() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeAdminScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
 
   render() {
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
           <Body style={STYLES.headerText}>
-            <Text style={COMMONSTYLES.header}>CROP SELECTION</Text>
+            <Text style={COMMONSTYLES.header}>MARKET RATE</Text>
           </Body>
           <Right>
-          <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+          <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Right>
@@ -99,8 +79,6 @@ class CropSelectionScreen extends Component {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

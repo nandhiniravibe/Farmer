@@ -7,7 +7,6 @@ import {Card,CardItem,Text,Container,Content,Button,Form,Item,Input,Label,Icon,H
 import { STYLES } from '../styles/registration';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
-// import {userRegistration,login,getAllRelationships,} from '../actions';
 
 class RegistrationScreen extends Component {
   constructor(props) {
@@ -24,12 +23,7 @@ class RegistrationScreen extends Component {
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
-    // this.fetchDate();
   };
-
-//   fetchDate() {
-//     this.props.getAllRelationships();
-//   }
 
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
@@ -113,7 +107,6 @@ class RegistrationScreen extends Component {
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>SIGN UP</Text>
           </Body>
-
         </Header>
         <Content>
           <Card transparent style={STYLES.container}>
@@ -200,9 +193,6 @@ class RegistrationScreen extends Component {
             <Button block success style={STYLES.btns} onPress={this.handleSubmit}>
               <Text>SIGN UP</Text>
             </Button>
-            {/* <Button block success style={STYLES.btns1} onPress={this.handleSubmit}>
-              <Text>SIGN UP AS VENDOR</Text>
-            </Button> */}
           </View>
         </Content>
       </Container>
@@ -211,15 +201,9 @@ class RegistrationScreen extends Component {
 };
 
 RegistrationScreen.propTypes = {
-//   userRegistration: PropTypes.func.isRequired,
-//   login: PropTypes.func.isRequired,
-//   getAllRelationships: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-//   userRegistration,
-//   getAllRelationships,
-//   login
 }, dispatch);
 
 const mapStateToProps = state => ({

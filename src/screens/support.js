@@ -28,7 +28,7 @@ class SupportScreen extends Component {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
   onBackPress = () => {
-    this.props.navigation.navigate('HomeAdminScreen');
+    this.props.navigation.navigate('HomeFarmerScreen');
     return true;
   };
   handleChangeEmail(e) {
@@ -54,7 +54,7 @@ class SupportScreen extends Component {
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
@@ -62,7 +62,7 @@ class SupportScreen extends Component {
             <Text style={COMMONSTYLES.header}>SUPPORT</Text>
           </Body>
           <Right>
-          <Button transparent onPress={() => this.props.navigation.navigate("HomeAdminScreen")}>
+          <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Right>

@@ -13,14 +13,8 @@ class HomeFarmerScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPassword: true,
-      email: undefined,
-      password: undefined,
     };
     this.onBackPress = this.onBackPress.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -32,66 +26,64 @@ class HomeFarmerScreen extends Component {
     this.props.navigation.navigate('WelcomeScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-  handleSubmit() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Email");
-    if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("MyFamilyScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
 
   render() {
     const items = [
+
       {
         name: 'SHOP',
-        code: 'rgba(40, 125, 215, 0.67)',
+        code: 'rgba(249, 197, 11, 0.72)',
         icon: "shopping-cart",
         routeName: "ProductsScreen"
       },
       {
-        name: 'ASSISTANT',
-        code: 'rgba(249, 197, 11, 0.72)',
-        icon: "phone",
-        routeName: "SupportScreen"
+        name: 'CROPS',
+        code: 'rgba(216, 27, 24, 0.78)',
+        icon: "leaf",
+        routeName: "CropListScreen"
       },
+
       {
         name: 'NEWS',
-        code: 'rgba(216, 27, 24, 0.78)',
+        code: 'rgba(105, 175, 75, 0.77)',
         icon: "newspaper-o",
         routeName: "NewsScreen"
       },
       {
         name: 'EVENTS',
-        code: 'rgba(105, 175, 75, 0.77)',
+        code: 'rgba(188, 44, 221, 0.73)',
         icon: "calendar",
         routeName: "EventsScreen"
       },
       {
-        name: 'CROP SELECTION',
-        code: 'rgba(188, 44, 221, 0.73)',
+        name: 'MARKET RATE',
+        code: 'rgba(33, 160, 171, 0.75)',
         icon: "line-chart",
         routeName: "CropSelectionScreen"
       },
       {
         name: "TODAY'S WETHER",
-        code: 'rgba(33, 160, 171, 0.75)',
+        code: 'rgba(65, 44, 206, 0.74)',
         icon: "tv",
         routeName: "WhetherScreen"
       },
       {
-        name: 'INSURANCE',
+        name: 'TIP OF THE DAY',
         code: 'rgba(40, 125, 215, 0.67)',
+        icon: "phone",
+        routeName: "DailyTipsScreen"
+      },
+      {
+        name: 'INSURANCE',
+        code: 'rgba(239, 140, 26, 0.74)',
         icon: "book",
         routeName: "InsuranceScreen"
+      },
+      {
+        name: 'ASSISTANT',
+        code: 'pink',
+        icon: "phone",
+        routeName: "SupportScreen"
       }
     ];
     return (
@@ -107,30 +99,17 @@ class HomeFarmerScreen extends Component {
           </Body>
         </Header>
         <Content>
-        {/* <View style={STYLES.btnView}>
-        <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("WhetherScreen")} >
-              <Text>POWERED EQUIPMENTS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("WhetherScreen")}>
-              <Text>NON-POWERED EQIPMENTS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("FertilizersScreen")}>
-              <Text>FERTILIZERS</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress= {() => this.props.navigation.navigate("SeedsScreen")}>
-              <Text>SEEDS</Text>
-            </Button>
-            </View> */}
              <FlatGrid
               itemDimension={100}
               items={items}
               style={styles.gridView}
               renderItem={({ item, index }) => (
+                <TouchableOpacity onPress={() => this.props.navigation.navigate(item.routeName)}>
                 <View style={[styles.itemContainer, { backgroundColor: item.code }]} >
-                  <Icon size={150} name={item.icon} type="FontAwesome" style={{ color: '#fff' }}
-                    onPress={() => this.props.navigation.navigate(item.routeName)} />
+                  <Icon size={150} name={item.icon} type="FontAwesome" style={{ color: '#fff' }} />
                   <Text style={styles.itemName}>{item.name}</Text>
                 </View>
+                </TouchableOpacity>
               )}
             />
         </Content>
@@ -141,8 +120,6 @@ class HomeFarmerScreen extends Component {
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

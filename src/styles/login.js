@@ -57,7 +57,7 @@ export const STYLES = StyleSheet.create({
   },
   btns: {
     backgroundColor: THEME_COLOR,
-    marginTop: 30,
+    marginTop: 20,
   },
   inlineIcons: {
     fontSize: responsiveFontSize(2),

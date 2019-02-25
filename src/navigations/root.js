@@ -22,7 +22,13 @@ import InsuranceScreen from '../screens/insurance';
 import EventsScreen from '../screens/events';
 import CropSelectionScreen from '../screens/cropSelection';
 import ProductsScreen from '../screens/products';
-
+import AddEventsScreen from '../screens/addEvents';
+import AddNewsScreen from '../screens/addNews';
+import ProductDetailScreen from '../screens/productDetail';
+import CropListScreen from '../screens/cropList';
+import CropDetailScreen from '../screens/cropDetail';
+import AddProductsScreen from '../screens/addProducts';
+import DailyTipsScreen from '../screens/dailyTips';
 
 
 const ScenesApp = {
@@ -97,6 +103,27 @@ const ScenesApp = {
   },
   ProductsScreen: {
     screen: ProductsScreen
+  },
+  AddEventsScreen: {
+    screen: AddEventsScreen
+  },
+  AddNewsScreen: {
+    screen: AddNewsScreen
+  },
+  ProductDetailScreen: {
+    screen: ProductDetailScreen
+  },
+  CropListScreen: {
+    screen: CropListScreen
+  },
+  CropDetailScreen: {
+    screen: CropDetailScreen
+  },
+  AddProductsScreen: {
+    screen: AddProductsScreen
+  },
+  DailyTipsScreen: {
+    screen: DailyTipsScreen
   }
 }
 

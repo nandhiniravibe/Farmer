@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { View,ImageBackground,BackHandler,TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card,CardItem,Text,Header,Container,Content,Button,Form,Item,Input,Label,Icon,Left,Body,Spinner} from 'native-base';
 import { STYLES } from '../styles/home';
@@ -18,9 +17,6 @@ class HomeAdminScreen extends Component {
       password: undefined,
     };
     this.onBackPress = this.onBackPress.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
@@ -32,22 +28,6 @@ class HomeAdminScreen extends Component {
     this.props.navigation.navigate('LoginScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-  handleSubmit() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Email");
-    if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
-        this.props.navigation.navigate("MyFamilyScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
 
   render() {
     const items = [
@@ -121,8 +101,6 @@ class HomeAdminScreen extends Component {
 
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

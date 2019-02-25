@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
@@ -20,8 +19,8 @@ class LoginScreen extends Component {
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
-    this.handleSubmitVendor = this.handleSubmitVendor.bind(this);
-    this.handleSubmitAdmin = this.handleSubmitAdmin.bind(this);
+    // this.handleSubmitVendor = this.handleSubmitVendor.bind(this);
+    // this.handleSubmitAdmin = this.handleSubmitAdmin.bind(this);
 
   }
   componentWillMount() {
@@ -42,25 +41,36 @@ class LoginScreen extends Component {
   };
 
   handleSubmitFarmer() {
+    const { email, password } = this.state;
+    if (!email) return alert("Please enter Phone number");
+    if (!password) return alert("Please enter Password");
+    if (email  && password ) {
+      if(email == 1 && password == 1){
+      this.props.navigation.navigate("HomeFarmerScreen")
+      }
+      else if(email ==2 && password ==2){
+        this.props.navigation.navigate("HomeVendorScreen")
+      }
+      else if(email ==3 && password ==3){
+        this.props.navigation.navigate("HomeFarmerScreen")
+      }
+      else{
+        alert("Invalid username or password")
+      }
+    } else {
+      alert(' Please fill out all fields ')
+    }
+  }
+
+  handleSubmitVendor() {
     // const { email, password } = this.state;
     // if (!email) return alert("Please enter Phone number");
     // if (!password) return alert("Please enter Password");
     // if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeFarmerScreen")
-    // } else {
-      // alert(' Please fill out all fields ')
-    // }
-  }
-
-  handleSubmitVendor() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '1' && password == '1') {
       this.props.navigation.navigate("HomeVendorScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
+    // } else {
+    //   alert(' Please fill out all fields ')
+    // }
   }
 
   handleSubmitAdmin() {
@@ -68,7 +78,7 @@ class LoginScreen extends Component {
     // if (!email) return alert("Please enter Phone number");
     // if (!password) return alert("Please enter Password");
     // if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeAdminScreen")
+      this.props.navigation.navigate("HomeFarmerScreen")
     // } else {
       // alert(' Please fill out all fields ')
     // }
@@ -124,17 +134,16 @@ class LoginScreen extends Component {
           </View>
           <View style={STYLES.btnView}>
             <Button block success style={STYLES.btns} onPress={this.handleSubmitFarmer}>
-              <Text>SIGN IN AS FARMER</Text>
+              <Text>SIGN IN</Text>
             </Button>
-            <Button block success style={STYLES.btns} onPress={this.handleSubmitVendor}>
+            {/* <Button block success style={STYLES.btns} onPress={this.handleSubmitVendor}>
               <Text>SIGN IN AS VENDOR</Text>
             </Button>
-            <Button block success style={STYLES.btns} onPress={this.handleSubmitAdmin}>
+            <Button block success style={STYLES.btns} onPress={this.handleSubmitFarmer}>
               <Text>SIGN IN AS ADMIN</Text>
-            </Button>
+            </Button> */}
             <Text style={STYLES.forgotPassword}
-              onPress={() => this.props.navigation.navigate('ForgotScreen')}
-            >
+              onPress={() => this.props.navigation.navigate('ForgotScreen')}>
               Forgot Password ?
             </Text>
           </View>
@@ -144,15 +153,7 @@ class LoginScreen extends Component {
   }
 };
 
-
-LoginScreen.propTypes = {
-  // login: PropTypes.func.isRequired,
-  // getAllChild: PropTypes.func.isRequired,
-};
-
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

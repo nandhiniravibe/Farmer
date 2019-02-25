@@ -32,20 +32,6 @@ class ForgotScreen extends Component {
     this.props.navigation.navigate('WelcomeScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-  handleSubmit() {
-    const { email, password } = this.state;
-    if (email) {
-        alert('Password reset link has been sent to your Mobile number')
-    } else {
-      alert('Please enter your Phone number')
-    }
-  }
 
   render() {
     return (
@@ -101,15 +87,7 @@ class ForgotScreen extends Component {
   }
 };
 
-
-ForgotScreen.propTypes = {
-  // login: PropTypes.func.isRequired,
-  // getAllChild: PropTypes.func.isRequired,
-};
-
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({

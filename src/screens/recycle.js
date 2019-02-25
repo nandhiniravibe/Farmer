@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card, CardItem, Text, Header, Container, Content, Button, Form,Tab, Tabs, Item, Input, Label, Icon, Left, Body, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
@@ -78,8 +77,6 @@ class RecycleScreen extends Component {
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({
