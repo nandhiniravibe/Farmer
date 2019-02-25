@@ -44,7 +44,14 @@ class Powered extends Component {
           </Right>
         </Header>
         <Content>
-
+          <View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductDetailScreen")}>
+              <Image
+                source={require('../assets/tractor.png')}
+                resizeMode='stretch'
+                style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+            </TouchableOpacity>
+          </View>
         </Content>
       </Container>
     )

@@ -48,9 +48,9 @@ class EventsScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>14th Agricultural Science Congress</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/tractor.png')}
+                            source={require('../assets/event/events1.png')}
                             resizeMode='stretch'
-                            style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+                            style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
                             <Text>The NAAS in collaboration with the ICAR and Indian Agricultural Research
             Institute will be organizing XIV Agricultural Science Congress at New Delhi from
@@ -91,9 +91,9 @@ class EventsScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>4th INDIA ASEAN EXPO & SUMMIT 2019</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/tractor.png')}
+                            source={require('../assets/event/events2.png')}
                             resizeMode='stretch'
-                            style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+                            style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
                             <Text>
                                 Federation of Indian Chambers of Commerce & Industry (FICCI), with the support of Government of India is organizing the 4th India-ASEAN Expo and Summit under the overarching theme “Reviving the Millennial Partnership” from February 21-23, 2019 at Jawaharlal Nehru Stadium, Gate no.2 in New Delhi.
@@ -203,9 +203,9 @@ class EventsScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>11th International Horti Expo 2019</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/tractor.png')}
+                            source={require('../assets/event/events3.png')}
                             resizeMode='stretch'
-                            style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+                            style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
                             <Text>
                                 Agriculture, with its allied sectors including horticulture, is the largest livelihood provider in India, more so in the vast rural areas. Sustainable agriculture, in terms of food security, rural employment, and environmentally sustainable technologies such as soil conservation, sustainable natural resource management and biodiversity protection, are essential for holistic rural development.

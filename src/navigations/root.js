@@ -29,6 +29,8 @@ import CropListScreen from '../screens/cropList';
 import CropDetailScreen from '../screens/cropDetail';
 import AddProductsScreen from '../screens/addProducts';
 import DailyTipsScreen from '../screens/dailyTips';
+import StepsToGrowScreen from '../screens/stepsToGrow';
+import CropHealthScreen from '../screens/cropHealth';
 
 
 const ScenesApp = {
@@ -124,6 +126,12 @@ const ScenesApp = {
   },
   DailyTipsScreen: {
     screen: DailyTipsScreen
+  },
+  StepsToGrowScreen: {
+    screen: StepsToGrowScreen
+  },
+  CropHealthScreen: {
+    screen: CropHealthScreen
   }
 }
 

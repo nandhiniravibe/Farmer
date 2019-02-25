@@ -55,9 +55,9 @@ Kisan Samman scheme: Chandrakant
 Patil(Feb 7,2019)</Text>
             </CardItem>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/news/news1.png')}
               resizeMode='stretch'
-              style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+              style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
               <Text>Maharashtra Revenue and Agriculture Minister Chandrakant Patil said the estimated number of
 beneficiaries in the state is around 1.20 crore.
@@ -79,9 +79,9 @@ after a meeting with agriculture and revenue officials on the scheme.
               <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>BJP government dedicated to poor, farmers, tribals and women: Maharashtra CM Devendra Fadnavis(16 Feb,2019)</Text>
             </CardItem>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/news/news2.png')}
               resizeMode='stretch'
-              style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+              style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
               <Text>
                 Nagpur: Maharashtra Chief Minister Devendra Fadnavis on Saturday said the BJP government was dedicated to the poor people, farmers, tribals and women. He also announced the formation of a special cell at the state secretariat for the development and welfare of various tribal communities.
@@ -96,9 +96,9 @@ after a meeting with agriculture and revenue officials on the scheme.
               <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>Sun empowers Maharashtra farmers(Feb 6,2019)</Text>
             </CardItem>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/news/news3.png')}
               resizeMode='stretch'
-              style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+              style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
               <Text>
                 Unable to stop providing free electricity to farmers for political reasons, some state governments in India have separated the electricity lines for farm work in an effort to control subsidies. Now the western state of Maharashtra has started powering these separate lines through solar PV, installed in sub-stations of the state government-owned distribution company (discom).
@@ -115,9 +115,9 @@ after a meeting with agriculture and revenue officials on the scheme.
 </Text>
             </CardItem>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/news/news4.png')}
               resizeMode='stretch'
-              style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
+              style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
               <Text>
               Nearly 1.5 crore Maharashtra farmers owning up to two hectares of land are expected to benefit from the Pradhan Mantri Kisan Samman Nidhi announced in the Union budget Friday, a senior state agriculture department official said. Presenting the Interim Budget for 2019-20 in the Lok Sabha, Union Finance Minister Piyush Goyal Friday said farmers will be provided Rs 6,000 per year in three instalments under a scheme to be fully funded by the central government.

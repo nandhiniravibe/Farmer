@@ -38,48 +38,46 @@ class CropDetailScreen extends Component {
                     <Body style={STYLES.headerText}>
                         <Text style={COMMONSTYLES.header}>CROPS</Text>
                     </Body>
-                    <Right>
-                        <Button transparent onPress={() => this.props.navigation.navigate("AddEventsScreen")}>
-                            <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
-                        </Button>
-                    </Right>
                 </Header>
                 <Content>
                     <Card>
                         <Image
-                            source={require('../assets/tractor.png')}
+                            source={require('../assets/wheat.jpeg')}
                             resizeMode='stretch'
-                            style={{ width: responsiveWidth(85), height: responsiveHeight(20) }} />
+                            style={{ width: responsiveWidth(100), height: responsiveHeight(28) }} />
                         <CardItem>
                             <Text style={{ color: 'blue', fontSize: 15 }}>14th Agricultural Science Congress 14th Agricultural Science Congress 14th Agricultural Science Congress 14th Agricultural Science Congress 14th Agricultural Science Congress</Text>
                         </CardItem>
 
-                        <CardItem style={{padding: '10%',
-        alignSelf: 'center',}}>
+                        <CardItem style={{
+                            padding: '10%',
+                            alignSelf: 'center',
+                        }}>
                             <Button block success style={STYLES.btns} style={{
                                 width: responsiveWidth(70), alignItems: 'center', justifyContent: 'center', backgroundColor: '#2198F5',
                                 marginTop: 40
-                            }} >
+                            }} onPress={() => this.props.navigation.navigate("StepsToGrowScreen")} >
                                 <Text>STEPS TO GROW</Text>
                             </Button>
                         </CardItem>
 
-                        <CardItem style={{padding: '10%',
-        alignSelf: 'center',}}>
-                            <Button block success style={{ width: responsiveWidth(70), alignItems: 'center', justifyContent: 'center', backgroundColor: '#2198F5', marginTop: 20 }}>
+                        <CardItem style={{
+                            padding: '10%',
+                            alignSelf: 'center',
+                        }}>
+                            <Button block success style={{ width: responsiveWidth(70), alignItems: 'center', justifyContent: 'center', backgroundColor: '#2198F5', marginTop: 20 }} onPress={() => this.props.navigation.navigate("CropHealthScreen")}>
                                 <Text>CROP HEALTH</Text></Button>
                         </CardItem>
 
-                        <CardItem style={{padding: '10%',
-        alignSelf: 'center',}}>
-                            <Button block success style={STYLES.btns} style={{ width: responsiveWidth(60), alignItems: 'center', justifyContent: 'center', backgroundColor: 'orange', marginTop: 20 }}  onPress={() => this.props.navigation.navigate('SupportScreen')}>
+                        <CardItem style={{
+                            padding: '10%',
+                            alignSelf: 'center',
+                        }}>
+                            <Button block success style={STYLES.btns} style={{ width: responsiveWidth(60), alignItems: 'center', justifyContent: 'center', backgroundColor: 'orange', marginTop: 20 }} onPress={() => this.props.navigation.navigate('SupportScreen')}>
                                 <Text>NEED HELP ?</Text>
-                                </Button>
+                            </Button>
                         </CardItem>
                     </Card>
-
-
-
                 </Content>
             </Container>
         )

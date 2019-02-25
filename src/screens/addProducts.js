@@ -73,7 +73,7 @@ class AddProductsScreen extends Component {
                             <View>
                                 <Image
                                     style={STYLES.logo}
-                                    source={require("./../assets/tractorIcon.png")}
+                                    source={require("./../assets/openCamera.png")}
                                     resizeMode={'contain'}
                                 />
                                 <Text style={{textAlign: 'center'}}>Upload Image</Text>
