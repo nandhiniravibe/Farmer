@@ -50,23 +50,106 @@ class NonPowered extends Component {
           </Right>
         </Header>
         <Content>
-        <FlatGrid 
-        itemDimension={130}
-        items={items}
-        style={styles.gridView}
-        renderItem={({ item, index }) => (
-          <View style={[styles.itemContainer, { backgroundColor: item.code }]}>
-            <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemCode}>{item.code}</Text>
+             <View style={styles.container}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductDetailScreen")}>
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/tractor.png')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/wheat.jpeg')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
           </View>
-        )}
-      />
+          <View style={styles.container}>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/tractor.png')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/wheat.jpeg')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.container}>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/tractor.png')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/wheat.jpeg')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+          </View>
         </Content>
       </Container>
     )
   }
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: responsiveWidth(94),
+    alignSelf: 'center',
+    marginTop: responsiveHeight(2)
+},
+card: { width: responsiveWidth(45), height: responsiveHeight(28) },
+cardItem: { alignItems: 'center', alignSelf: 'center', flex: 1, flexDirection: 'column' },
+icons: {
+    height: responsiveHeight(20),
+    width: responsiveWidth(35),
+},
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
@@ -77,25 +160,3 @@ const mapStateToProps = state => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(NonPowered);
-const styles = StyleSheet.create({
-  gridView: {
-    marginTop: 20,
-    flex: 1,
-  },
-  itemContainer: {
-    justifyContent: 'flex-end',
-    borderRadius: 5,
-    padding: 10,
-    height: 150,
-  },
-  itemName: {
-    fontSize: 16,
-    color: '#fff',
-    fontWeight: '600',
-  },
-  itemCode: {
-    fontWeight: '600',
-    fontSize: 12,
-    color: '#fff',
-  },
-});

@@ -7,7 +7,7 @@ import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
-class Fertilizers extends Component {
+class FertilizersScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,13 +44,106 @@ class Fertilizers extends Component {
           </Right>
         </Header>
         <Content>
-
+             <View style={styles.container}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductDetailScreen")}>
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/tractor.png')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/wheat.jpeg')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.container}>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/tractor.png')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/wheat.jpeg')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.container}>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/tractor.png')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+            <TouchableOpacity >
+              <Card style={styles.card}>
+                <CardItem style={styles.cardItem}>
+                  <Image
+                    style={styles.icons}
+                    source={require('../assets/wheat.jpeg')}
+                    resizeMode='stretch'
+                  />
+                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
+                </CardItem>
+              </Card>
+            </TouchableOpacity>
+          </View>
         </Content>
       </Container>
     )
   }
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: responsiveWidth(94),
+    alignSelf: 'center',
+    marginTop: responsiveHeight(2)
+},
+card: { width: responsiveWidth(45), height: responsiveHeight(28) },
+cardItem: { alignItems: 'center', alignSelf: 'center', flex: 1, flexDirection: 'column' },
+icons: {
+    height: responsiveHeight(20),
+    width: responsiveWidth(35),
+},
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
@@ -59,4 +152,4 @@ const mapStateToProps = state => ({
   reducerObj: state.reducerObj
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Fertilizers);
+export default connect(mapStateToProps, mapDispatchToProps)(FertilizersScreen);

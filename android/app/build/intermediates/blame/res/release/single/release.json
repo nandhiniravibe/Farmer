@@ -40,6 +40,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_news_news2.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_news_news2.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -244,6 +248,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_event_events1.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_event_events1.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
@@ -304,6 +312,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_grow_grow2.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_grow_grow2.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-v21_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-v21\\abc_dialog_material_background.xml"
     },
@@ -348,12 +360,12 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\anim_abc_grow_fade_in_from_bottom.xml.flat",
-        "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\anim_abc_grow_fade_in_from_bottom.xml.flat",
+        "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -768,6 +780,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_wheat.jpeg.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_wheat.jpeg"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -792,12 +808,12 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -822,6 +838,10 @@
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_event_events3.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_event_events3.png"
     },
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -964,6 +984,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\aae2beab8aa72ea907b192fb78d5f86a\\res\\drawable\\notification_icon_background.xml"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_news_news1.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_news_news1.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1008,6 +1032,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_event_events2.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_event_events2.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -1028,6 +1056,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_news_news3.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_news_news3.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
@@ -1046,6 +1078,10 @@
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_grow_grow1.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_grow_grow1.png"
     },
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
@@ -1168,6 +1204,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_grow_grow3.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_grow_grow3.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_text_cursor_material.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable\\abc_text_cursor_material.xml"
     },
@@ -1230,6 +1270,10 @@
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_notification_action.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\aae2beab8aa72ea907b192fb78d5f86a\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_opencamera.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_opencamera.png"
     },
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_whether.png.flat",
@@ -1492,6 +1536,10 @@
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\react-native-0.58.4.aar\\d50c778dbb4750a7d555314025c27605\\res\\anim\\catalyst_push_up_out.xml"
     },
     {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_grow_grow4.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_grow_grow4.png"
+    },
+    {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_abc_ratingbar_material.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\drawable\\abc_ratingbar_material.xml"
     },
@@ -1582,6 +1630,10 @@
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_abc_action_mode_close_item_material.xml.flat",
         "source": "C:\\Users\\Home\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\220897042d45600d3e3dd6694628bb3f\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_src_assets_news_news4.png.flat",
+        "source": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\src_assets_news_news4.png"
     },
     {
         "merged": "C:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",

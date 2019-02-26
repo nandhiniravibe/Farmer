@@ -3107,13 +3107,26 @@ public final class R {
     public static final int notify_panel_notification_icon_bg=0x7f060061;
     public static final int redbox_top_border_background=0x7f060062;
     public static final int src_assets_bg_new=0x7f060063;
-    public static final int src_assets_logohome=0x7f060064;
-    public static final int src_assets_man=0x7f060065;
-    public static final int src_assets_tractor=0x7f060066;
-    public static final int src_assets_tractoricon=0x7f060067;
-    public static final int src_assets_whether=0x7f060068;
-    public static final int tooltip_frame_dark=0x7f060069;
-    public static final int tooltip_frame_light=0x7f06006a;
+    public static final int src_assets_event_events1=0x7f060064;
+    public static final int src_assets_event_events2=0x7f060065;
+    public static final int src_assets_event_events3=0x7f060066;
+    public static final int src_assets_grow_grow1=0x7f060067;
+    public static final int src_assets_grow_grow2=0x7f060068;
+    public static final int src_assets_grow_grow3=0x7f060069;
+    public static final int src_assets_grow_grow4=0x7f06006a;
+    public static final int src_assets_logohome=0x7f06006b;
+    public static final int src_assets_man=0x7f06006c;
+    public static final int src_assets_news_news1=0x7f06006d;
+    public static final int src_assets_news_news2=0x7f06006e;
+    public static final int src_assets_news_news3=0x7f06006f;
+    public static final int src_assets_news_news4=0x7f060070;
+    public static final int src_assets_opencamera=0x7f060071;
+    public static final int src_assets_tractor=0x7f060072;
+    public static final int src_assets_tractoricon=0x7f060073;
+    public static final int src_assets_wheat=0x7f060074;
+    public static final int src_assets_whether=0x7f060075;
+    public static final int tooltip_frame_dark=0x7f060076;
+    public static final int tooltip_frame_light=0x7f060077;
   }
   public static final class id {
     public static final int ALT=0x7f070000;
