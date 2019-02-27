@@ -11,56 +11,7 @@ class FertilizersScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items=[
-        {
-        name1 : 'Jingo NXG ',
-        image1 :'../assets/fertilizer/ferti1.png',
-        amount1: 295,
-        name2: 'Jingo ',
-        image2: '../assets/fertilizer/ferti2.png',
-        amount2 :285,
-        },
-        {
-        name1 : 'Unnati Gold ',
-        image1 :'../assets/fertilizer/ferti3.png',
-        amount1: 480,
-        name2: 'F1',
-        image2: '../assets/fertilizer/ferti4.png',
-        amount2: 400,
-        },
-        {
-        name1 : 'Paton Super ',
-        image1 :'../assets/fertilizer/ferti5.png',
-        amount1:500 ,
-        name2: 'Teevra TC',
-        image2: '../assets/fertilizer/ferti6.png',
-        amount2 : 485,
-        },
-        {
-        name1 : 'Blue Dot ',
-        image1 :'../assets/fertilizer/ferti7.png',
-        amount1: 300,
-        name2: 'Daroga',
-        image2: '../assets/fertilizer/ferti8.png',
-        amount2: 470,
-        },
-        {
-        name1 : ' Solfert',
-        image1 :'../assets/fertilizer/ferti9.png',
-        amount1: 300,
-        name2: 'Filanto ',
-        image2: '../assets/fertilizer/ferti10.png',
-        amount2 : 440,
-        },
-        {
-        name1 : 'Solfert Water Soluble Fertilizer N P K 19:19:19',
-        image1 :'../assets/fertilizer/ferti11.png',
-        amount1: 500,
-        name2: 'Solfert Water Soluble Fertilizer Sulphate of Potash',
-        image2: '../assets/fertilizer/ferti12.png',
-        amount2: 650,
-        },
-        ]
+     
         
     };
     this.onBackPress = this.onBackPress.bind(this);
@@ -77,6 +28,56 @@ class FertilizersScreen extends Component {
   };
 
   render() {
+     const  items=[
+      {
+      name1 : 'Jingo NXG ',
+      image1 :require('../assets/fertilizer/ferti1.png'),
+      amount1: 295,
+      name2: 'Jingo ',
+      image2: require('../assets/fertilizer/ferti2.png'),
+      amount2 :285,
+      },
+      {
+      name1 : 'Unnati Gold ',
+      image1 :require('../assets/fertilizer/ferti3.png'),
+      amount1: 480,
+      name2: 'F1',
+      image2: require('../assets/fertilizer/ferti4.png'),
+      amount2: 400,
+      },
+      {
+      name1 : 'Paton Super ',
+      image1 :require('../assets/fertilizer/ferti5.png'),
+      amount1:500 ,
+      name2: 'Teevra TC',
+      image2: require('../assets/fertilizer/ferti6.png'),
+      amount2 : 485,
+      },
+      {
+      name1 : 'Blue Dot ',
+      image1 :require('../assets/fertilizer/ferti7.png'),
+      amount1: 300,
+      name2: 'Daroga',
+      image2: require('../assets/fertilizer/ferti8.png'),
+      amount2: 470,
+      },
+      {
+      name1 : ' Solfert',
+      image1 :require('../assets/fertilizer/ferti9.png'),
+      amount1: 300,
+      name2: 'Filanto ',
+      image2: require('../assets/fertilizer/ferti10.png'),
+      amount2 : 440,
+      },
+      {
+      name1 : 'Solfert Water Soluble Fertilizer N P K 19:19:19',
+      image1 :require('../assets/fertilizer/ferti11.png'),
+      amount1: 500,
+      name2: 'Solfert Water Soluble Fertilizer Sulphate of Potash',
+      image2: require('../assets/fertilizer/ferti12.png'),
+      amount2: 650,
+      },
+      ]
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -95,83 +96,37 @@ class FertilizersScreen extends Component {
           </Right>
         </Header>
         <Content>
-             <View style={styles.container}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductDetailScreen")}>
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/tractor.png')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/wheat.jpeg')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.container}>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/tractor.png')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/wheat.jpeg')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.container}>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/tractor.png')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/wheat.jpeg')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
+        <View>
+            {items.map(item => {
+              return (
+                <View style={styles.container}>
+                  <TouchableOpacity onPress ={this.props.navigation.navigate("ProductDetailScreen")}>
+                    <Card style={styles.card}>
+                      <CardItem style={styles.cardItem}>
+                        <Image
+                          style={styles.icons}
+                          source={item.image1}
+                          resizeMode='stretch'
+                        />
+                        <Text style={{ fontSize: responsiveFontSize(1.7) }}>{item.name1}</Text>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress ={this.props.navigation.navigate("ProductDetailScreen")}>
+                    <Card style={styles.card}>
+                      <CardItem style={styles.cardItem}>
+                        <Image
+                          style={styles.icons}
+                          source={item.image2}
+                          resizeMode='stretch'
+                        />
+                        <Text style={{ fontSize: responsiveFontSize(1.7) }}>{item.name2}</Text>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
+                </View>
+              )
+            })}
           </View>
         </Content>
       </Container>

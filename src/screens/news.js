@@ -12,15 +12,25 @@ class NewsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user_id,
       showPassword: true,
       email: undefined,
       password: undefined,
     };
     this.onBackPress = this.onBackPress.bind(this);
   }
+
   componentWillMount() {
+    this.update();
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
+
+  async update() {
+    const user_id = await AsyncStorage.getItem('user_id');
+    this.setState({
+    user_id,
+    });
+    };
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
@@ -41,11 +51,13 @@ class NewsScreen extends Component {
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>NEWS</Text>
           </Body>
+          {this.state.user_id == 1 ?
           <Right>
             <Button transparent onPress={() => this.props.navigation.navigate("AddNewsScreen")}>
               <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
-          </Right>
+          </Right> : null
+          }
         </Header>
         <Content>
           <Card>

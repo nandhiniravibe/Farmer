@@ -12,64 +12,7 @@ class NonPowered extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items =[
-        {
-        name1 : 'Chisel Point Pick axe ',
-        image1 :'../assets/equip/equ1.png',
-        amount1: 120,
-        name2: 'Billhook axe ',
-        image2: '../assets/equip/equ2.png',
-        amount2 : 800,
-        },
-        {
-        name1 : 'Double Hoe',
-        image1 :'../assets/equip/equ3.png',
-        amount1: 280,
-        name2: 'Adze Hoe',
-        image2: '../assets/equip/equ4.png',
-        amount2: 500,
-        },
-        {
-        name1 : 'Digging Shovel ',
-        image1 :'../assets/equip/equ5.png',
-        amount1:130 ,
-        name2: 'Trenching Shovel ',
-        image2: '../assets/equip/equ6.png',
-        amount2 : 1560,
-        },
-        {
-        name1 : 'Digging Spade',
-        image1 :'../assets/equip/equ7.png',
-        amount1: 780,
-        name2: 'Drain Spade',
-        image2: '../assets/equip/equ8.png',
-        amount2: 750,
-        },
-        {
-        name1 : 'Solar Sprayer ',
-        image1 :'../assets/equip/equ9.png',
-        amount1 : 5000,
-        name2: 'Power Sprayer ',
-        image2: '../assets/equip/equ10.png',
-        amount2 : 6000,
-        },
-        {
-        name1 : 'Single Row Paddy Weeder',
-        image1 :'../assets/equip/equ11.png',
-        amount1: 5000,
-        name2: 'Metal Red and Black Micro Sprinkler',
-        image2: '../assets/equip/equ13.png',
-        amount2: 1800,
-        },
-        {
-        name1 : 'PS Ultra Spray Bodies Sprinkler ',
-        image1 :'../assets/equip/equ14.png',
-        amount1: 165,
-        name2: 'Rain Bird Irrigation Rain Gun ',
-        image2: '../assets/equip/equ15.png',
-        amount2 : 4800
-        }
-        ]
+     
         
     };
     this.onBackPress = this.onBackPress.bind(this);
@@ -86,11 +29,64 @@ class NonPowered extends Component {
   };
 
   render() {
-    const items = [
-      { name: 'TURQUOISE', code: '#1abc9c' }, { name: 'EMERALD', code: '#2ecc71' },
-      { name: 'PETER RIVER', code: '#3498db' }, { name: 'AMETHYST', code: '#9b59b6' },
-      { name: 'WET ASPHALT', code: '#34495e' }, { name: 'GREEN SEA', code: '#16a085' }
-    ];
+    const  items =[
+      {
+      name1 : 'Chisel Point Pick axe ',
+      image1 :require('../assets/equip/equ1.png'),
+      amount1: 120,
+      name2: 'Billhook axe ',
+      image2: require('../assets/equip/equ2.png'),
+      amount2 : 800,
+      },
+      {
+      name1 : 'Double Hoe',
+      image1 :require('../assets/equip/equ3.png'),
+      amount1: 280,
+      name2: 'Adze Hoe',
+      image2: require('../assets/equip/equ4.png'),
+      amount2: 500,
+      },
+      {
+      name1 : 'Digging Shovel ',
+      image1 :require('../assets/equip/equ5.png'),
+      amount1:130 ,
+      name2: 'Trenching Shovel ',
+      image2: require('../assets/equip/equ6.png'),
+      amount2 : 1560,
+      },
+      {
+      name1 : 'Digging Spade',
+      image1 :require('../assets/equip/equ7.png'),
+      amount1: 780,
+      name2: 'Drain Spade',
+      image2: require('../assets/equip/equ8.png'),
+      amount2: 750,
+      },
+      {
+      name1 : 'Solar Sprayer ',
+      image1 :require('../assets/equip/equ9.png'),
+      amount1 : 5000,
+      name2: 'Power Sprayer ',
+      image2: require('../assets/equip/equ10.png'),
+      amount2 : 6000,
+      },
+      {
+      name1 : 'Single Row Paddy Weeder',
+      image1 :require('../assets/equip/equ11.png'),
+      amount1: 5000,
+      name2: 'Metal Red and Black Micro Sprinkler',
+      image2: require('../assets/equip/equ13.png'),
+      amount2: 1800,
+      },
+      {
+      name1 : 'PS Ultra Spray Bodies Sprinkler ',
+      image1 :require('../assets/equip/equ14.png'),
+      amount1: 165,
+      name2: 'Rain Bird Irrigation Rain Gun ',
+      image2: require('../assets/equip/equ15.png'),
+      amount2 : 4800
+      }
+      ]
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -109,83 +105,37 @@ class NonPowered extends Component {
           </Right>
         </Header>
         <Content>
-             <View style={styles.container}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductDetailScreen")}>
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/tractor.png')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/wheat.jpeg')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.container}>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/tractor.png')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/wheat.jpeg')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.container}>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/tractor.png')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
-            <TouchableOpacity >
-              <Card style={styles.card}>
-                <CardItem style={styles.cardItem}>
-                  <Image
-                    style={styles.icons}
-                    source={require('../assets/wheat.jpeg')}
-                    resizeMode='stretch'
-                  />
-                  <Text style={{ fontSize: responsiveFontSize(1.7) }}>Powered equipments</Text>
-                </CardItem>
-              </Card>
-            </TouchableOpacity>
+        <View>
+            {items.map(item => {
+              return (
+                <View style={styles.container}>
+                  <TouchableOpacity onPress ={this.props.navigation.navigate("ProductDetailScreen")}>
+                    <Card style={styles.card}>
+                      <CardItem style={styles.cardItem}>
+                        <Image
+                          style={styles.icons}
+                          source={item.image1}
+                          resizeMode='stretch'
+                        />
+                        <Text style={{ fontSize: responsiveFontSize(1.7) }}>{item.name1}</Text>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress ={this.props.navigation.navigate("ProductDetailScreen")}>
+                    <Card style={styles.card}>
+                      <CardItem style={styles.cardItem}>
+                        <Image
+                          style={styles.icons}
+                          source={item.image2}
+                          resizeMode='stretch'
+                        />
+                        <Text style={{ fontSize: responsiveFontSize(1.7) }}>{item.name2}</Text>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
+                </View>
+              )
+            })}
           </View>
         </Content>
       </Container>

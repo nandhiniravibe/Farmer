@@ -26,6 +26,7 @@ class ProductDetailScreen extends Component {
   };
 
   render() {
+    
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -44,14 +45,38 @@ class ProductDetailScreen extends Component {
           </Right>
         </Header>
         <Content>
-          <View>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductScreen")}>
-              <Image
+          <Card>
+            <CardItem>
+              <Text Header style={{fontWeight:'bold'}}>
+                Heading
+              </Text>
+            </CardItem>
+          <Image
                 source={require('../assets/tractor.png')}
                 resizeMode='stretch'
-                style={{ width: responsiveWidth(100), height: responsiveHeight(60) }} />
-            </TouchableOpacity>
-          </View>
+                style={{ width: responsiveWidth(90), height: responsiveHeight(50) }} />
+                <CardItem>
+                  <Right>
+                  <Text style={{fontSize :25, fontWeight: 'bold'}}>
+                    $200
+                  </Text>
+                  </Right> 
+                </CardItem>
+                <CardItem>
+                  <Text>
+                    hgfhgfh hjhkhj fydsiugf ksjyiudg sdygidyg ksygfiduyg jsyfiudyg sdjfgidygi ksjgfisg shgidsg sjgfids jsgfdg jhghj gdsfihdkf hsdskjlksjd lkjadj skdjlsjd
+                  </Text>
+                </CardItem>
+                <Button transparent onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
+              <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
+            </Button>
+            <CardItem>
+              <Text>
+                htyut
+              </Text>
+            </CardItem>
+           
+          </Card>
         </Content>
       </Container>
     )
