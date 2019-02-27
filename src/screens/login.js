@@ -46,6 +46,8 @@ class LoginScreen extends Component {
     if (!password) return alert("Please enter Password");
     if (email  && password ) {
       if(email == 1 && password == 1){
+        const user_id =1
+        AsyncStorage.setItem('user_id', user_id.toString());
       this.props.navigation.navigate("HomeFarmerScreen")
       }
       else if(email ==2 && password ==2){
