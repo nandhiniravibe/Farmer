@@ -26,7 +26,7 @@ class ProductDetailScreen extends Component {
   };
 
   render() {
-    
+    const { name, image, amount } = this.props.navigation.state.params;
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -47,35 +47,44 @@ class ProductDetailScreen extends Component {
         <Content>
           <Card>
             <CardItem>
-              <Text Header style={{fontWeight:'bold'}}>
-                Heading
+              <Text Header style={{ fontWeight: 'bold' }}>
+                {name}
               </Text>
             </CardItem>
-          <Image
-                source={require('../assets/tractor.png')}
-                resizeMode='stretch'
-                style={{ width: responsiveWidth(90), height: responsiveHeight(50) }} />
-                <CardItem>
-                  <Right>
-                  <Text style={{fontSize :25, fontWeight: 'bold'}}>
-                    $200
-                  </Text>
-                  </Right> 
-                </CardItem>
-                <CardItem>
-                  <Text>
-                    hgfhgfh hjhkhj fydsiugf ksjyiudg sdygidyg ksygfiduyg jsyfiudyg sdjfgidygi ksjgfisg shgidsg sjgfids jsgfdg jhghj gdsfihdkf hsdskjlksjd lkjadj skdjlsjd
-                  </Text>
-                </CardItem>
-                <Button transparent onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
-              <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
-            </Button>
+            <Image
+              source={image}
+              resizeMode='stretch'
+              style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
+            <CardItem>
+              <Right>
+                <Text style={{ fontSize: 25, fontWeight: 'bold' }}>
+                  {'$' + amount}
+                </Text>
+              </Right>
+            </CardItem>
             <CardItem>
               <Text>
-                htyut
-              </Text>
+                hgfhgfh hjhkhj fydsiugf ksjyiudg sdygidyg ksygfiduyg jsyfiudyg sdjfgidygi ksjgfisg shgidsg sjgfids jsgfdg jhghj gdsfihdkf hsdskjlksjd lkjadj skdjlsjd
+                  </Text>
             </CardItem>
-           
+            <CardItem>
+              <Left>
+              <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
+             <Text>BUY</Text>
+            </Button>
+              </Left>
+              <Body>
+              <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
+             <Text>RENT</Text>
+            </Button>
+              </Body>
+              <Right>
+              <Button success onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
+              <Icon name="shopping-cart" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
+            </Button>
+              </Right>    
+            </CardItem>
+
           </Card>
         </Content>
       </Container>

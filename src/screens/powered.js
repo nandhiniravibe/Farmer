@@ -11,13 +11,22 @@ class Powered extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user_id :0
       
     };
     this.onBackPress = this.onBackPress.bind(this);
   }
   componentWillMount() {
+    this.update();
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
+
+  async update() {
+    const user_id = await AsyncStorage.getItem('user_id');
+    this.setState({
+    user_id
+    });
+    };
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
@@ -121,11 +130,13 @@ class Powered extends Component {
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>POWERED EQUIPMENTS</Text>
           </Body>
+          {this.state.user_id == 2 ?
           <Right>
             <Button transparent onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
               <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
-          </Right>
+          </Right> : null
+          }
         </Header>
         <Content>
           <View>
@@ -133,13 +144,13 @@ class Powered extends Component {
               return (
                 <View style={styles.container}>
                   <TouchableOpacity 
-                  // onPress={() => 
-                  //   this.props.navigation.navigate("ProductDetailScreen", {
-                  //   name: item.name1,
-                  //   image: item.image1,
-                  //   amount: item.amount1,
-                  // })
-                  // }
+                  onPress={() => 
+                    this.props.navigation.navigate("ProductDetailScreen", {
+                    name: item.name1,
+                    image: item.image1,
+                    amount: item.amount1,
+                  })
+                  }
                   >
                     <Card style={styles.card}>
                       <CardItem style={styles.cardItem}>
@@ -152,8 +163,13 @@ class Powered extends Component {
                       </CardItem>
                     </Card>
                   </TouchableOpacity >
-                  <TouchableOpacity 
-                  onPress ={this.props.navigation.navigate("ProductDetailScreen")} 
+                  <TouchableOpacity onPress={() => 
+                    this.props.navigation.navigate("ProductDetailScreen", {
+                    name: item.name2,
+                    image: item.image2,
+                    amount: item.amount2,
+                  })
+                  }
                   >
                     <Card style={styles.card}>
                       <CardItem style={styles.cardItem}>

@@ -12,18 +12,22 @@ class SupportScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPassword: true,
-      email: undefined,
-      password: undefined,
+      user_id: 0
     };
     this.onBackPress = this.onBackPress.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
+
   }
   componentWillMount() {
+    this.update();
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
   }
+
+  async update() {
+    const user_id = await AsyncStorage.getItem('user_id');
+    this.setState({
+      user_id
+    });
+  };
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
@@ -31,23 +35,6 @@ class SupportScreen extends Component {
     this.props.navigation.navigate('HomeFarmerScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-
-  handleSubmitFarmer() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeFarmerScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
 
   render() {
     return (
@@ -61,11 +48,12 @@ class SupportScreen extends Component {
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>SUPPORT</Text>
           </Body>
+          {this.state.user_id == 1 ?
           <Right>
-          <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
               <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
-          </Right>
+          </Right> : null }
         </Header>
         <Content>
 
@@ -79,46 +67,46 @@ class SupportScreen extends Component {
                 <Text note>8940480184</Text>
               </Body>
               <Right>
-              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
               </Right>
             </ListItem>
 
             <ListItem avatar>
               <Left>
-              <Thumbnail source={require('../assets/man.png')} />
+                <Thumbnail source={require('../assets/man.png')} />
               </Left>
               <Body>
                 <Text>Contact 2</Text>
                 <Text note>8940480184</Text>
               </Body>
               <Right>
-              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
               </Right>
             </ListItem>
 
             <ListItem avatar>
               <Left>
-              <Thumbnail source={require('../assets/man.png')} />
+                <Thumbnail source={require('../assets/man.png')} />
               </Left>
               <Body>
                 <Text>Contact 3</Text>
                 <Text note>8940480184</Text>
               </Body>
               <Right>
-              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
               </Right>
             </ListItem>
 
             <ListItem avatar>
               <Left>
-              <Thumbnail source={require('../assets/man.png')} />
+                <Thumbnail source={require('../assets/man.png')} />
               </Left>
               <Body>
                 <Text>Contact 4</Text>
                 <Text note>8940480184</Text>
               </Body>
               <Right>
-              <Icon name="phone" type="FontAwesome" style={{color:'green'}}  />
+                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
               </Right>
             </ListItem>
           </List>

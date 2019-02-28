@@ -12,7 +12,7 @@ class NewsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id,
+      user_id:0,
       showPassword: true,
       email: undefined,
       password: undefined,
@@ -28,7 +28,7 @@ class NewsScreen extends Component {
   async update() {
     const user_id = await AsyncStorage.getItem('user_id');
     this.setState({
-    user_id,
+    user_id
     });
     };
   componentWillUnmount() {

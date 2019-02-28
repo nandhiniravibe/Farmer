@@ -29,7 +29,7 @@ class AddProductsScreen extends Component {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     }
     onBackPress = () => {
-        this.props.navigation.navigate('EventsScreen');
+        this.props.navigation.navigate('ProductsScreen');
         return true;
     };
     handleChangeEventname(e) {
@@ -43,12 +43,12 @@ class AddProductsScreen extends Component {
     };
 
     handleSubmit() {
-        const {eventName,eventDate,eventDescription} = this.state;
-        if(eventName && eventDate && eventDescription){
-        alert("Event created Successully !!")
-        this.props.navigation.navigate("EventsScreen")
+        const { eventName, eventDate, eventDescription } = this.state;
+        if (eventName && eventDate && eventDescription) {
+            alert("Event created Successully !!")
+            this.props.navigation.navigate("ProductsScreen")
         }
-        else{
+        else {
             alert("Plese fill out all fields.")
         }
     }
@@ -59,7 +59,7 @@ class AddProductsScreen extends Component {
             <Container>
                 <Header style={COMMONSTYLES.headerBackgroundColor}>
                     <Left style={{ flex: null }}>
-                        <Button transparent onPress={() => this.props.navigation.navigate("EventsScreen")}>
+                        <Button transparent onPress={() => this.props.navigation.navigate("ProductsScreen")}>
                             <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
                         </Button>
                     </Left>
@@ -76,7 +76,7 @@ class AddProductsScreen extends Component {
                                     source={require("./../assets/openCamera.png")}
                                     resizeMode={'contain'}
                                 />
-                                <Text style={{textAlign: 'center'}}>Upload Image</Text>
+                                <Text style={{ textAlign: 'center' }}>Upload Image</Text>
                             </View>
                         </CardItem>
                     </Card>

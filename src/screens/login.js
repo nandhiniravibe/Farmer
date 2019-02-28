@@ -51,9 +51,13 @@ class LoginScreen extends Component {
       this.props.navigation.navigate("HomeFarmerScreen")
       }
       else if(email ==2 && password ==2){
-        this.props.navigation.navigate("HomeVendorScreen")
+        const user_id =2
+        AsyncStorage.setItem('user_id', user_id.toString());
+        this.props.navigation.navigate("ProductsScreen")
       }
       else if(email ==3 && password ==3){
+        const user_id =0
+        AsyncStorage.setItem('user_id', user_id.toString());
         this.props.navigation.navigate("HomeFarmerScreen")
       }
       else{

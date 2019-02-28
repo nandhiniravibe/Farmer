@@ -12,12 +12,21 @@ class CropListScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            user_id: 0
         };
         this.onBackPress = this.onBackPress.bind(this);
     }
     componentWillMount() {
+        this.update();
         BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
-    }
+      }
+    
+      async update() {
+        const user_id = await AsyncStorage.getItem('user_id');
+        this.setState({
+        user_id
+        });
+        };
     componentWillUnmount() {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     }
@@ -47,11 +56,12 @@ class CropListScreen extends Component {
                     <Body style={STYLES.headerText}>
                         <Text style={COMMONSTYLES.header}>CROPS</Text>
                     </Body>
+                    {this.state.user_id == 1 ?
                     <Right>
                         <Button transparent onPress={() => this.props.navigation.navigate("AddEventsScreen")}>
                             <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
                         </Button>
-                    </Right>
+                    </Right> :null }
                 </Header>
                 <Content>
                     <FlatGrid
