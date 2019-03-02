@@ -48,6 +48,10 @@ class ProductsScreen extends Component {
               <Text>POWERED EQUIPMENTS</Text>
             </Button>
             <Button block success style={STYLES.btns}
+              onPress={() => this.props.navigation.navigate("ImplementsScreen")}>
+              <Text>IMPLEMENTS</Text>
+            </Button>
+            <Button block success style={STYLES.btns}
               onPress={() => this.props.navigation.navigate("NonPoweredScreen")}>
               <Text>NON-POWERED EQIPMENTS</Text>
             </Button>
@@ -59,11 +63,7 @@ class ProductsScreen extends Component {
               onPress={() => this.props.navigation.navigate("SeedsScreen")}>
               <Text>SEEDS</Text>
             </Button>
-            <Button block success style={{ marginTop: 30}}
-              onPress={() => this.props.navigation.navigate("SeedsScreen")}>
-              <Text>MAINTANANCE / RECYCLE</Text>
-            </Button>
-            <Button block success style={{ marginTop: 30}}
+            <Button block warning style={{ marginTop: 30}}
               onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
               <Text>SELL YOUR PRODUCT</Text>
             </Button>

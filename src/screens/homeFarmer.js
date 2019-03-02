@@ -42,7 +42,6 @@ class HomeFarmerScreen extends Component {
         icon: "leaf",
         routeName: "CropListScreen"
       },
-
       {
         name: 'NEWS',
         code: 'rgba(105, 175, 75, 0.77)',

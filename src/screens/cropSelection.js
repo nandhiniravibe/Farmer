@@ -62,22 +62,22 @@ class CropSelectionScreen extends Component {
             </CardItem>
             <Text style={{fontSize: 18}}>WHEAT :</Text>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/stat/stat1.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(35) }} />
             <Text style={{fontSize: 18}}>MILLET :</Text>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/stat/stat1.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(35) }} />
             <Text style={{fontSize: 18}}>BARLEY :</Text>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/stat/stat1.png')}
               resizeMode='stretch'
-              style={{ width: responsiveWidth(100), height: responsiveHeight(35) }} />
+              style={{ width: responsiveWidth(100), height: responsiveHeight(35), marginBottom:20 }} />
             <Text style={{fontSize: 18}}>CORN :</Text>
             <Image
-              source={require('../assets/tractor.png')}
+              source={require('../assets/stat/stat1.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(35) }} />
           </Card>

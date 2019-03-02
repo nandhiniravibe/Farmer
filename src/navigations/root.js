@@ -31,6 +31,8 @@ import AddProductsScreen from '../screens/addProducts';
 import DailyTipsScreen from '../screens/dailyTips';
 import StepsToGrowScreen from '../screens/stepsToGrow';
 import CropHealthScreen from '../screens/cropHealth';
+import BuyScreen from '../screens/buy';
+import ImplementsScreen from '../screens/implement';
 
 
 const ScenesApp = {
@@ -132,6 +134,12 @@ const ScenesApp = {
   },
   CropHealthScreen: {
     screen: CropHealthScreen
+  },
+  BuyScreen: {
+    screen: BuyScreen
+  },
+  ImplementsScreen: {
+    screen: ImplementsScreen
   }
 }
 

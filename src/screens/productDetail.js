@@ -38,11 +38,11 @@ class ProductDetailScreen extends Component {
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>PRODUCTS</Text>
           </Body>
-          <Right>
+          {/* <Right>
             <Button transparent onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
               <Icon name="shopping-cart" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
-          </Right>
+          </Right> */}
         </Header>
         <Content>
           <Card>
@@ -58,20 +58,25 @@ class ProductDetailScreen extends Component {
             <CardItem>
               <Right>
                 <Text style={{ fontSize: 25, fontWeight: 'bold' }}>
-                  {'$' + amount}
+                  {'Rs.' + amount}
                 </Text>
               </Right>
             </CardItem>
             <CardItem>
               <Text>
-                It contains 3 cylinders withdisplacement range of 2048 and the type of transmission is fully constant mesh.                 </Text>
+                It contains 3 cylinders withdisplacement range of 2048 and the type of transmission is fully constant mesh.  It contains 3 cylinders withdisplacement range of 2048 and the type of transmission is fully constant mesh.  It contains 3 cylinders withdisplacement range of 2048 and the type of transmission is fully constant mesh.                 </Text>
+            
             </CardItem>
             <CardItem style={{ flexDirection: 'row', marginLeft: 10,marginRight: 10}}>
-                <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")} style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
+                <Button warning 
+                // onPress={() => this.props.navigation.navigate("AddProductsScreen")} 
+                style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
                   <Text style={{alignItems: 'center'}}>BUY</Text>
                 </Button>
               <Body>
-                <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")} style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
+                <Button warning 
+                // onPress={() => this.props.navigation.navigate("AddProductsScreen")} 
+                style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
                   <Text style={{alignItems: 'center'}}>RENT</Text>
                 </Button>
               </Body>

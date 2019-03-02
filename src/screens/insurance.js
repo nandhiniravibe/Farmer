@@ -38,6 +38,10 @@ class InsuranceScreen extends Component {
   };
 
   render() {
+    const items =[
+     { insurance :'KISAN CREDIT CARD SCHEME (KCCS)-REVISED SCHEME'},
+    { insurance :'CROP LOANS'}
+    ]
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -57,56 +61,17 @@ class InsuranceScreen extends Component {
           </Right> : null }
         </Header>
         <Content>
-          <List>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../assets/man.png')} />
-              </Left>
-              <Body>
-                <Text>Contact 1</Text>
-                <Text note>8940480184</Text>
-              </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
-              </Right>
-            </ListItem>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../assets/man.png')} />
-              </Left>
-              <Body>
-                <Text>Contact 2</Text>
-                <Text note>8940480184</Text>
-              </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
-              </Right>
-            </ListItem>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../assets/man.png')} />
-              </Left>
-              <Body>
-                <Text>Contact 3</Text>
-                <Text note>8940480184</Text>
-              </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
-              </Right>
-            </ListItem>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../assets/man.png')} />
-              </Left>
-              <Body>
-                <Text>Contact 4</Text>
-                <Text note>8940480184</Text>
-              </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
-              </Right>
-            </ListItem>
-          </List>
+        {items.map(item => {
+              return (
+          <TouchableOpacity>
+         <Card>
+           <Text>
+             {items.insurance}
+           </Text>
+         </Card>
+         </TouchableOpacity>
+            )
+          })}
         </Content>
       </Container>
     )
