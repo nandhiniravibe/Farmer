@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 26 22:47:03 IST 2019
+#Sat Mar 02 09:36:17 IST 2019
 56.path=lib/armeabi-v7a/libglog.so
 5.base=C\:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 42.base=C\:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out

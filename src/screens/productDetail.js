@@ -40,7 +40,7 @@ class ProductDetailScreen extends Component {
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
-              <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
+              <Icon name="shopping-cart" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Right>
         </Header>
@@ -64,27 +64,18 @@ class ProductDetailScreen extends Component {
             </CardItem>
             <CardItem>
               <Text>
-                hgfhgfh hjhkhj fydsiugf ksjyiudg sdygidyg ksygfiduyg jsyfiudyg sdjfgidygi ksjgfisg shgidsg sjgfids jsgfdg jhghj gdsfihdkf hsdskjlksjd lkjadj skdjlsjd
-                  </Text>
+                It contains 3 cylinders withdisplacement range of 2048 and the type of transmission is fully constant mesh.                 </Text>
             </CardItem>
-            <CardItem>
-              <Left>
-              <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
-             <Text>BUY</Text>
-            </Button>
-              </Left>
+            <CardItem style={{ flexDirection: 'row', marginLeft: 10,marginRight: 10}}>
+                <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")} style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
+                  <Text style={{alignItems: 'center'}}>BUY</Text>
+                </Button>
               <Body>
-              <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
-             <Text>RENT</Text>
-            </Button>
+                <Button warning onPress={() => this.props.navigation.navigate("AddProductsScreen")} style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
+                  <Text style={{alignItems: 'center'}}>RENT</Text>
+                </Button>
               </Body>
-              <Right>
-              <Button success onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
-              <Icon name="shopping-cart" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
-            </Button>
-              </Right>    
             </CardItem>
-
           </Card>
         </Content>
       </Container>
@@ -99,4 +90,15 @@ const mapStateToProps = state => ({
   reducerObj: state.reducerObj
 });
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    flex: 1,
+  }
+});
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetailScreen);

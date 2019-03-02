@@ -70,14 +70,25 @@ class AddNewsScreen extends Component {
                 <Content>
                     <Card transparent style={STYLES.container}>
                         <CardItem>
-                            <View>
-                                <Image
+                        <Item stackedLabel style={styles.itemStyle}>
+                                <Label style={styles.labelStyle}>Upload Image</Label>
+                                <Item style={{ paddingTop: '10%', paddingBottom: '10%' }}>
+                                    <PhotoUpload
+                                        onPhotoSelect={avatar => {
+                                            if (avatar) {
+                                                const imageBinary = `data:image/png;base64,${avatar}`
+                                                console.log(avatar);
+                                                this.setState({ imageBinary });
+                                            }
+                                        }}>
+                                        <Image
                                     style={STYLES.logo}
                                     source={require("./../assets/openCamera.png")}
                                     resizeMode={'contain'}
                                 />
-                                <Text style={{textAlign: 'center'}}>Upload Image</Text>
-                            </View>
+                                    </PhotoUpload>
+                                </Item>
+                            </Item>
                         </CardItem>
                     </Card>
                     {this.state.showSpinner && <Spinner color='green' />}

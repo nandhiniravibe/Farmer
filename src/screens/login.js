@@ -19,8 +19,6 @@ class LoginScreen extends Component {
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
-    // this.handleSubmitVendor = this.handleSubmitVendor.bind(this);
-    // this.handleSubmitAdmin = this.handleSubmitAdmin.bind(this);
 
   }
   componentWillMount() {
@@ -45,17 +43,17 @@ class LoginScreen extends Component {
     if (!email) return alert("Please enter Phone number");
     if (!password) return alert("Please enter Password");
     if (email  && password ) {
-      if(email == 1 && password == 1){
+      if(email ==3  && password == 3){
         const user_id =1
         AsyncStorage.setItem('user_id', user_id.toString());
       this.props.navigation.navigate("HomeFarmerScreen")
       }
-      else if(email ==2 && password ==2){
-        const user_id =2
-        AsyncStorage.setItem('user_id', user_id.toString());
-        this.props.navigation.navigate("ProductsScreen")
-      }
-      else if(email ==3 && password ==3){
+      // else if(email ==2 && password ==2){
+      //   const user_id =2
+      //   AsyncStorage.setItem('user_id', user_id.toString());
+      //   this.props.navigation.navigate("ProductsScreen")
+      // }
+      else if(email ==1 && password ==1){
         const user_id =0
         AsyncStorage.setItem('user_id', user_id.toString());
         this.props.navigation.navigate("HomeFarmerScreen")
@@ -66,28 +64,6 @@ class LoginScreen extends Component {
     } else {
       alert(' Please fill out all fields ')
     }
-  }
-
-  handleSubmitVendor() {
-    // const { email, password } = this.state;
-    // if (!email) return alert("Please enter Phone number");
-    // if (!password) return alert("Please enter Password");
-    // if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeVendorScreen")
-    // } else {
-    //   alert(' Please fill out all fields ')
-    // }
-  }
-
-  handleSubmitAdmin() {
-    // const { email, password } = this.state;
-    // if (!email) return alert("Please enter Phone number");
-    // if (!password) return alert("Please enter Password");
-    // if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeFarmerScreen")
-    // } else {
-      // alert(' Please fill out all fields ')
-    // }
   }
 
   render() {

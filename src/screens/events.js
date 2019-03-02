@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
+import { Linking, View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Right, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
@@ -11,21 +11,25 @@ class EventsScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user_id :0
+            user_id: 0
         };
         this.onBackPress = this.onBackPress.bind(this)
     }
     componentWillMount() {
         this.update();
         BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
-      }
-    
-      async update() {
+    }
+
+    async update() {
         const user_id = await AsyncStorage.getItem('user_id');
         this.setState({
-        user_id
+            user_id
         });
-        };
+    };
+
+    openUrl1() {
+        Linking.openURL("http://14agricongress2019.in/index.php")
+    }
     componentWillUnmount() {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     }
@@ -34,6 +38,31 @@ class EventsScreen extends Component {
         return true;
     };
     render() {
+        const item = [
+            {
+                title: '14th Agricultural Science Congress',
+                image: '',
+                description2: "The NAAS in collaboration with the ICAR and Indian Agricultural Research Institute will be organizing XIV Agricultural Science Congress at New Delhi from February 20-23, 2019 on the theme and quot ;Innovations for Agricultural Transformation and quot ;. The four-day mega-event will include five plenary sessions, 32 technical sessions covering 10 different thematic areas, farmers session, 1500 poster presentations, inter-university student elocution contest and 4 panel discussions. Moreover, ASC-AgriTech-2019 exhibition will be a major event in this Congress.",
+                description2: "A large number of participants cutting across the disciplines of researchers,faculty, policy makers, farmers, entrepreneurs, development departments, corporate and private sector leaders, NGOs and students are expected to attend.",
+                description3: "The panel discussions shall be an important element of the Congress. ASC India Expo 2019 is being planned as an important event. As more than 2000 delegates, large number of Farmers and Delhi public are expected to visit the exhibition, it will provide public and private sector agricultural research Institutes/Universities, Industries, Extension agencies, NGOs to showcase their innovative technologies to the visiting delegates, farmers and general public visitors. To exhibit or visit, one may contact the details below."
+            },
+
+            {
+                title: '',
+                image: '',
+                description1: '',
+                description2: '',
+                description3: ''
+            },
+
+            {
+                title: '',
+                image: '',
+                description1: '',
+                description2: '',
+                description3: ''
+            },
+        ]
         return (
             <Container>
                 <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -46,11 +75,11 @@ class EventsScreen extends Component {
                         <Text style={COMMONSTYLES.header}>EVENS</Text>
                     </Body>
                     {this.state.user_id == 1 ?
-                    <Right>
-                        <Button transparent onPress={() => this.props.navigation.navigate("AddEventsScreen")}>
-                            <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
-                        </Button>
-                    </Right> : null}
+                        <Right>
+                            <Button transparent onPress={() => this.props.navigation.navigate("AddEventsScreen")}>
+                                <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
+                            </Button>
+                        </Right> : null}
                 </Header>
                 <Content>
                     <Card>
@@ -95,6 +124,11 @@ class EventsScreen extends Component {
                                 Website: http://14agricongress2019.in/index.php
                             </Text>
                         </CardItem>
+                        <Button success onPress={this.openUrl1.bind(this)} style={{ alignItems: 'center' }}>
+                            <Text >
+                                Register
+                                   </Text>
+                        </Button>
                     </Card>
                     <Card>
                         <CardItem header>
@@ -207,6 +241,12 @@ class EventsScreen extends Component {
     Exhibition: Malvika Kareer, FICCI +91-11-23487254 malvika.kareer@ficci.com
                             </Text>
                         </CardItem>
+                        <Button success onPress={this.openUrl1.bind(this)} style={{alignItems:'center'}}>
+                                <Text>
+                                    Register
+                                   </Text>
+                            </Button>
+
                     </Card>
                     <Card>
                         <CardItem header>
@@ -240,7 +280,13 @@ class EventsScreen extends Component {
 
                             </Text>
                         </CardItem>
+                        <Button success onPress={this.openUrl1.bind(this)} style={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Text>
+                                Register
+                                   </Text>
+                        </Button>
                     </Card>
+
                 </Content>
             </Container>
         )
@@ -253,5 +299,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 const mapStateToProps = state => ({
     reducerObj: state.reducerObj
 });
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventsScreen);

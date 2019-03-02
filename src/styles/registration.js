@@ -65,7 +65,7 @@ export const STYLES = StyleSheet.create({
   },
   inlineIcons: {
     fontSize: responsiveFontSize(2),
-    color: 'black',
+    color: THEME_COLOR,
     marginRight: responsiveWidth(4),
   },
   inlineIconsEmail: {
@@ -92,6 +92,15 @@ export const STYLES = StyleSheet.create({
     borderBottomColor: '#000',
     width: responsiveWidth(90),
     // Left: responsiveWidth(3)
+  },
+  inputContainer2: {
+    flexDirection: 'row',
+    // alignItems: 'center',
+    // backgroundColor: '#fff',
+    // alignSelf: 'center',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#000',
+    width: responsiveWidth(40),
+    // Left: responsiveWidth(3)
   }
-
 });

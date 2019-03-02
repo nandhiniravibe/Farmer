@@ -77,5 +77,4 @@ export const STYLES = StyleSheet.create({
   headerText: {
     marginLeft: (Platform.OS == 'android') ? responsiveWidth(33) : 0,
   }
-
 });

@@ -6,6 +6,7 @@ import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, I
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
+import PhotoUpload from 'react-native-photo-upload';
 
 class AddProductsScreen extends Component {
     constructor(props) {
@@ -68,16 +69,30 @@ class AddProductsScreen extends Component {
                     </Body>
                 </Header>
                 <Content>
+
+
                     <Card transparent style={STYLES.container}>
                         <CardItem>
-                            <View>
-                                <Image
+
+                            <Item stackedLabel style={styles.itemStyle}>
+                                <Label style={styles.labelStyle}>Upload Image</Label>
+                                <Item style={{ paddingTop: '10%', paddingBottom: '10%' }}>
+                                    <PhotoUpload
+                                        onPhotoSelect={avatar => {
+                                            if (avatar) {
+                                                const imageBinary = `data:image/png;base64,${avatar}`
+                                                console.log(avatar);
+                                                this.setState({ imageBinary });
+                                            }
+                                        }}>
+                                        <Image
                                     style={STYLES.logo}
                                     source={require("./../assets/openCamera.png")}
                                     resizeMode={'contain'}
                                 />
-                                <Text style={{ textAlign: 'center' }}>Upload Image</Text>
-                            </View>
+                                    </PhotoUpload>
+                                </Item>
+                            </Item>
                         </CardItem>
                     </Card>
                     {this.state.showSpinner && <Spinner color='green' />}
@@ -136,5 +151,27 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 const mapStateToProps = state => ({
     reducerObj: state.reducerObj
 });
+
+
+const styles = StyleSheet.create({
+    header: {
+        backgroundColor: '#0278FF',
+    },
+    container: {
+        backgroundColor: '#ffffff',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    labelStyle: {
+        fontWeight: 'bold'
+    },
+
+    itemStyle: {
+        width: responsiveWidth(93)
+    },
+
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddProductsScreen);
