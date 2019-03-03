@@ -87,7 +87,7 @@ class EventsScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>14th Agricultural Science Congress</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/event/events1.png')}
+                            source={require('../assets/events1.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
@@ -135,7 +135,7 @@ class EventsScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>4th INDIA ASEAN EXPO & SUMMIT 2019</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/event/events2.png')}
+                            source={require('../assets/events2.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
@@ -253,7 +253,7 @@ class EventsScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>11th International Horti Expo 2019</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/event/events3.png')}
+                            source={require('../assets/events3.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>

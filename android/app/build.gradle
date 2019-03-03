@@ -135,7 +135,7 @@ android {
 
 dependencies {
         // compile project(':react-native-photo-view')
-    // compile project(':react-native-razorpay')
+// compile project(':react-native-razorpay')
     implementation project(':react-native-fs')
     implementation project(':react-native-image-resizer')
     implementation project(':react-native-image-picker')

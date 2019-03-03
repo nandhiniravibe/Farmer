@@ -9,7 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-fs/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-image-picker/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-image-resizer/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-razorpay/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android" />
           </set>
         </option>

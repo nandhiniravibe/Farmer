@@ -13,13 +13,18 @@ class NonPowered extends Component {
     super(props);
     this.state = {
      
-      user_id :0  
+      user_id :0  ,
+      nonPowered: []
     };
     this.onBackPress = this.onBackPress.bind(this);
   }
   componentWillMount() {
-    this.update();
-    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+    AsyncStorage.getItem('nonPowered').then((res)=>{
+      const nonPowered = JSON.parse(res)
+      this.setState({ nonPowered });
+      this.update();
+      BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+    })
   }
 
   async update() {
@@ -37,64 +42,7 @@ class NonPowered extends Component {
   };
 
   render() {
-    const  items =[
-      {
-      name1 : 'Chisel Point Pick axe ',
-      image1 :require('../assets/equip/equ1.png'),
-      amount1: 120,
-      name2: 'Billhook axe ',
-      image2: require('../assets/equip/equ2.png'),
-      amount2 : 800,
-      },
-      {
-      name1 : 'Double Hoe',
-      image1 :require('../assets/equip/equ3.png'),
-      amount1: 280,
-      name2: 'Adze Hoe',
-      image2: require('../assets/equip/equ4.png'),
-      amount2: 500,
-      },
-      {
-      name1 : 'Digging Shovel ',
-      image1 :require('../assets/equip/equ5.png'),
-      amount1:130 ,
-      name2: 'Trenching Shovel ',
-      image2: require('../assets/equip/equ6.png'),
-      amount2 : 1560,
-      },
-      {
-      name1 : 'Digging Spade',
-      image1 :require('../assets/equip/equ7.png'),
-      amount1: 780,
-      name2: 'Drain Spade',
-      image2: require('../assets/equip/equ8.png'),
-      amount2: 750,
-      },
-      {
-      name1 : 'Solar Sprayer ',
-      image1 :require('../assets/equip/equ9.png'),
-      amount1 : 5000,
-      name2: 'Power Sprayer ',
-      image2: require('../assets/equip/equ10.png'),
-      amount2 : 6000,
-      },
-      {
-      name1 : 'Single Row Paddy Weeder',
-      image1 :require('../assets/equip/equ11.png'),
-      amount1: 5000,
-      name2: 'Metal Red and Black Micro Sprinkler',
-      image2: require('../assets/equip/equ13.png'),
-      amount2: 1800,
-      },
-      {
-      name1 : 'PS Ultra Spray Bodies Sprinkler ',
-      image1 :require('../assets/equip/equ14.png'),
-      amount1: 165,
-      name2: 'Rain Bird Irrigation Rain Gun ',
-      image2: require('../assets/equip/equ15.png'),
-      amount2 : 4800
-      }
-      ]
+    
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
@@ -116,7 +64,7 @@ class NonPowered extends Component {
         </Header>
         <Content>
         <View>
-            {items.map(item => {
+            {this.state.nonPowered.map(item => {
               return (
                 <View style={styles.container}>
                   <TouchableOpacity onPress={() => 

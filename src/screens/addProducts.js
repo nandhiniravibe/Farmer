@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
-import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Spinner } from 'native-base';
+import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Picker } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
@@ -15,10 +15,12 @@ class AddProductsScreen extends Component {
             showPassword: true,
             email: undefined,
             password: undefined,
+            imageBinary: '',
+            type : 'powered'
         };
         this.onBackPress = this.onBackPress.bind(this);
-        this.handleChangeEventname = this.handleChangeEventname.bind(this);
-        this.handleChangeEventDate = this.handleChangeEventDate.bind(this);
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeDistributor = this.handleChangeDistributor.bind(this);
         this.handleChangeEventDescription = this.handleChangeEventDescription.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -33,21 +35,39 @@ class AddProductsScreen extends Component {
         this.props.navigation.navigate('ProductsScreen');
         return true;
     };
-    handleChangeEventname(e) {
-        this.setState({ eventName: e });
+    handleChangeName(e) {
+        this.setState({ name: e });
     };
-    handleChangeEventDate(e) {
-        this.setState({ eventDate: e });
+    handleChangeDistributor(e) {
+        this.setState({ amount: e });
     };
     handleChangeEventDescription(e) {
         this.setState({ eventDescription: e });
     };
 
-    handleSubmit() {
-        const { eventName, eventDate, eventDescription } = this.state;
-        if (eventName && eventDate && eventDescription) {
-            alert("Event created Successully !!")
-            this.props.navigation.navigate("ProductsScreen")
+
+   async handleSubmit() {
+    
+        const { name, amount, imageBinary, type } = this.state;
+        alert(this.state.type)
+        if (name && amount ) {
+            
+         AsyncStorage.getItem(type).then((res)=>{
+            const data = [{
+                name1 : name,
+                image1 :{uri : imageBinary},
+                amount1 :amount,
+                name2: 'Wheel Type Combine Harvestor',
+                image2: require('../assets/implements14.png'),
+                amount2 : 700000,
+               }]
+         const  item =[...data,...JSON.parse(res)]
+
+           alert("Event created Successully !!")
+   
+           AsyncStorage.setItem(type,JSON.stringify(item))
+               this.props.navigation.navigate("ProductsScreen")
+         })
         }
         else {
             alert("Plese fill out all fields.")
@@ -73,7 +93,6 @@ class AddProductsScreen extends Component {
 
                     <Card transparent style={STYLES.container}>
                         <CardItem>
-
                             <Item stackedLabel style={styles.itemStyle}>
                                 <Label style={styles.labelStyle}>Upload Image</Label>
                                 <Item style={{ paddingTop: '10%', paddingBottom: '10%' }}>
@@ -95,14 +114,33 @@ class AddProductsScreen extends Component {
                             </Item>
                         </CardItem>
                     </Card>
-                    {this.state.showSpinner && <Spinner color='green' />}
+
+            <View style={STYLES.inputContainer}>
+            <Icon name="users" type="FontAwesome" style={STYLES.inlineIcons} />
+            <Picker
+              mode="dropdown"
+              placeholder="Select category"
+              placeholderStyle={{ color: "black", }}
+              placeholderIconColor="#007aff"
+              style={{ width: undefined }}
+              selectedValue={this.state.type}
+              onValueChange={(e) => this.setState({ type: e })}            
+            >
+            <Item label="powered" value="powered" />
+            <Item label="implement" value="implement" />
+            <Item label="nonPowered" value="nonPowered" />
+            <Item label="fertilizers" value="fertilizers" />
+            <Item label="seeds" value="seeds" />
+            </Picker>
+          </View>
+
                     <View style={STYLES.inputContainer}>
                         <Icon name="th-large" type="FontAwesome" style={STYLES.inlineIcons} />
                         <TextInput
                             style={{ flex: 1, height: responsiveHeight(6) }}
                             placeholder="Product Name"
                             underlineColorAndroid="transparent"
-                            onChangeText={this.handleChangeEventname}
+                            onChangeText={this.handleChangeName}
                         />
                     </View>
                     <View style={STYLES.inputContainer}>
@@ -111,7 +149,7 @@ class AddProductsScreen extends Component {
                             style={{ flex: 1, height: responsiveHeight(6) }}
                             placeholder="Distributor"
                             underlineColorAndroid="transparent"
-                            onChangeText={this.handleChangeEventDate}
+                            onChangeText={this.handleChangeDistributor}
                         />
                     </View>
                     <View style={STYLES.inputContainer}>

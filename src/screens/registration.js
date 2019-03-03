@@ -167,7 +167,7 @@ class RegistrationScreen extends Component {
               </View>
             </CardItem>
           </Card>
-          {this.state.showSpinner && <Spinner color='green' />}
+          
           <View style={STYLES.inputContainer}>
             <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput

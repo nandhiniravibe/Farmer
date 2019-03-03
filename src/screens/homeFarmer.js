@@ -60,11 +60,18 @@ class HomeFarmerScreen extends Component {
         icon: "line-chart",
         routeName: "CropSelectionScreen"
       },
+      // {
+      //   name: "TODAY'S WEATHER",
+      //   code: 'rgba(65, 44, 206, 0.74)',
+      //   icon: "tv",
+      //   routeName: "WhetherScreen"
+      // },
+
       {
-        name: "TODAY'S WETHER",
+        name: "DAILY WORK",
         code: 'rgba(65, 44, 206, 0.74)',
         icon: "tv",
-        routeName: "WhetherScreen"
+        routeName: "DailyWorkScreen"
       },
       {
         name: 'TIP OF THE DAY',

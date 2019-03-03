@@ -33,6 +33,14 @@ import StepsToGrowScreen from '../screens/stepsToGrow';
 import CropHealthScreen from '../screens/cropHealth';
 import BuyScreen from '../screens/buy';
 import ImplementsScreen from '../screens/implement';
+import DailyWorkScreen from '../screens/dailyWork';
+import NeedWorkersScreen from '../screens/needWorkers';
+import MyWorksScreen from '../screens/myWorks';
+import ApplyForAWorkScreen from '../screens/applyForAWork';
+
+
+
+
 
 
 const ScenesApp = {
@@ -140,7 +148,19 @@ const ScenesApp = {
   },
   ImplementsScreen: {
     screen: ImplementsScreen
-  }
+  },
+  DailyWorkScreen: {
+    screen: DailyWorkScreen
+  },
+  NeedWorkersScreen: {
+    screen: NeedWorkersScreen
+  },
+  MyWorksScreen: {
+    screen: MyWorksScreen
+  },
+  ApplyForAWorkScreen: {
+    screen: ApplyForAWorkScreen
+  },
 }
 
 const router = createStackNavigator({

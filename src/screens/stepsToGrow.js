@@ -57,7 +57,7 @@ class StepsToGrowScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>2. Prepare the soil</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/grow/grow1.png')}
+                            source={require('../assets/grow1.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
@@ -82,7 +82,7 @@ class StepsToGrowScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>4. Rake it out</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/grow/grow2.png')}
+                            source={require('../assets/grow2.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
@@ -96,7 +96,7 @@ class StepsToGrowScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>5. Scare the crows!</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/grow/grow3.png')}
+                            source={require('../assets/grow3.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>
@@ -121,7 +121,7 @@ class StepsToGrowScreen extends Component {
                             <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>7. See how they grow!</Text>
                         </CardItem>
                         <Image
-                            source={require('../assets/grow/grow4.png')}
+                            source={require('../assets/grow4.png')}
                             resizeMode='stretch'
                             style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
                         <CardItem>

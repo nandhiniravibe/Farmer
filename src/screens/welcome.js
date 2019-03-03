@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View, ImageBackground, BackHandler } from 'react-native';
+import { Image, View, ImageBackground, BackHandler,AsyncStorage, TouchableOpacity } from 'react-native';
 import { Card,CardItem,Text,Container,Content,Button } from 'native-base'
 import logoImage from './../assets/logo-home.png';
 import { STYLES } from '../styles/welcome';
@@ -30,11 +30,14 @@ export default class WelcomeScreen extends Component {
             style={STYLES.backgroundImage}>
             <View style={STYLES.container}>
               <Text>Welcome To</Text>
-              <Image
+              <TouchableOpacity onPress={()=>AsyncStorage.clear()}>
+              <Image 
                 style={STYLES.logo}
                 source={logoImage}
                 resizeMode={'contain'}
               />
+              </TouchableOpacity>
+              
             </View>
             <Text style={STYLES.text}>
               The Platform For Farmers

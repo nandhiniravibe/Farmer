@@ -119,9 +119,9 @@
     <orderEntry type="library" name="Gradle: com.android.support:customview-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fbcore-1.10.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:localbroadcastmanager-28.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.facebook.fresco:drawee-1.10.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:fresco-1.10.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.facebook.fresco:drawee-1.10.0" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-okhttp3-1.10.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:interpolator-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.parse.bolts:bolts-tasks:1.4.0@jar" level="project" />
@@ -161,8 +161,11 @@
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.facebook.fresco:imagepipeline-base-1.10.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.1.1" level="project" />
+    <orderEntry type="module" module-name="react-native-fs" />
+    <orderEntry type="module" module-name="react-native-image-resizer" />
     <orderEntry type="module" module-name="react-native-gesture-handler" />
     <orderEntry type="module" module-name="react-native-vector-icons" />
+    <orderEntry type="module" module-name="react-native-image-picker" />
     <orderEntry type="library" name="Gradle: android-android-28" level="project" />
   </component>
 </module>

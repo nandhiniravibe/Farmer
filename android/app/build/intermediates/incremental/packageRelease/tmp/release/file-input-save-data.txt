@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Mar 01 23:03:33 IST 2019
+#Sun Mar 03 06:31:19 IST 2019
 56.path=lib/x86/libicu_common.so
 5.base=C\:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\release\\0
 42.base=C\:\\Users\\Home\\Documents\\Agri\\Farmer\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\release\\0

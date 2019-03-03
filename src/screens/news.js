@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Right, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
@@ -67,7 +66,7 @@ Kisan Samman scheme: Chandrakant
 Patil(Feb 7,2019)</Text>
             </CardItem>
             <Image
-              source={require('../assets/news/news1.png')}
+               source={require('../assets/news1.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
@@ -91,7 +90,7 @@ after a meeting with agriculture and revenue officials on the scheme.
               <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>BJP government dedicated to poor, farmers, tribals and women: Maharashtra CM Devendra Fadnavis(16 Feb,2019)</Text>
             </CardItem>
             <Image
-              source={require('../assets/news/news2.png')}
+              source={require('../assets/news2.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
@@ -108,7 +107,7 @@ after a meeting with agriculture and revenue officials on the scheme.
               <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}>Sun empowers Maharashtra farmers(Feb 6,2019)</Text>
             </CardItem>
             <Image
-              source={require('../assets/news/news3.png')}
+              source={require('../assets/news3.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>
@@ -127,7 +126,7 @@ after a meeting with agriculture and revenue officials on the scheme.
 </Text>
             </CardItem>
             <Image
-              source={require('../assets/news/news4.png')}
+              source={require('../assets/news4.png')}
               resizeMode='stretch'
               style={{ width: responsiveWidth(100), height: responsiveHeight(50) }} />
             <CardItem>

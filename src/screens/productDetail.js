@@ -69,13 +69,13 @@ class ProductDetailScreen extends Component {
             </CardItem>
             <CardItem style={{ flexDirection: 'row', marginLeft: 10,marginRight: 10}}>
                 <Button warning 
-                // onPress={() => this.props.navigation.navigate("AddProductsScreen")} 
+                onPress={() => this.props.navigation.navigate("BuyScreen")} 
                 style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
                   <Text style={{alignItems: 'center'}}>BUY</Text>
                 </Button>
               <Body>
                 <Button warning 
-                // onPress={() => this.props.navigation.navigate("AddProductsScreen")} 
+                onPress={() => this.props.navigation.navigate("BuyScreen")} 
                 style={{ marginLeft: 10,marginRight: 10, width: responsiveWidth(35)}}>
                   <Text style={{alignItems: 'center'}}>RENT</Text>
                 </Button>
