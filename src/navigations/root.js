@@ -37,11 +37,10 @@ import DailyWorkScreen from '../screens/dailyWork';
 import NeedWorkersScreen from '../screens/needWorkers';
 import MyWorksScreen from '../screens/myWorks';
 import ApplyForAWorkScreen from '../screens/applyForAWork';
-
-
-
-
-
+import PaymentScreen from '../screens/payment';
+import WorkAppliedScreen from '../screens/workApplied';
+import WorkCreatedScreen from '../screens/workCreated';
+import WorkersScreen from '../screens/workers';
 
 const ScenesApp = {
   SplashScreen: {
@@ -160,6 +159,18 @@ const ScenesApp = {
   },
   ApplyForAWorkScreen: {
     screen: ApplyForAWorkScreen
+  },
+  PaymentScreen: {
+    screen: PaymentScreen
+  },
+  WorkCreatedScreen: {
+    screen: WorkCreatedScreen
+  },
+  WorkAppliedScreen: {
+    screen: WorkAppliedScreen
+  },
+  WorkersScreen: {
+    screen: WorkersScreen
   },
 }
 

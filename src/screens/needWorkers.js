@@ -110,7 +110,8 @@ class NeedWorkersScreen extends Component {
     // if (showIncorrectEmailErrorMsg) return alert("Please enter valid Email");
     if (fname && phone && address && city && state && pin) {
       this.setState({ showSpinner: false });
-      // this.props.navigation.navigate("LoginScreen")
+      alert('Created Successfully !!!')
+      this.props.navigation.navigate("WorkCreatedScreen")
     } else {
       alert(' Please fill out all fields');
       this.setState({ showSpinner: false });
@@ -137,7 +138,7 @@ class NeedWorkersScreen extends Component {
         <Content>
           <View style ={{marginTop: 50}}>
             <View style={STYLES.inputContainer}>
-              <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="map-marker" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="Location *"
@@ -146,7 +147,7 @@ class NeedWorkersScreen extends Component {
               />
             </View>
             <View style={STYLES.inputContainer}>
-              <Icon name="phone" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="No.of workers needed *"
@@ -156,7 +157,7 @@ class NeedWorkersScreen extends Component {
               />
             </View>
             <View style={STYLES.inputContainer}>
-              <Icon name="envelope" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="calendar" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="From date *"
@@ -166,7 +167,7 @@ class NeedWorkersScreen extends Component {
               />
             </View>
             <View style={STYLES.inputContainer}>
-              <Icon name="address-card" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="calendar" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="To Date *"
@@ -176,7 +177,7 @@ class NeedWorkersScreen extends Component {
               />
             </View>
             <View style={STYLES.inputContainer}>
-              <Icon name="map-marker" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="suitcse" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="Type of work *"
@@ -187,7 +188,7 @@ class NeedWorkersScreen extends Component {
             </View>
 
             <View style={STYLES.inputContainer}>
-              <Icon name="map-pin" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="money" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="Wage per day *"
@@ -198,7 +199,7 @@ class NeedWorkersScreen extends Component {
             </View>
 
             <View style={STYLES.inputContainer}>
-              <Icon name="thumb-tack" type="FontAwesome" style={STYLES.inlineIcons} />
+              <Icon name="clock-o" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
                 style={{ flex: 1, height: responsiveHeight(6) }}
                 placeholder="Timing *"

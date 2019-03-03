@@ -22,7 +22,7 @@ class CropDetailScreen extends Component {
         BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
     }
     onBackPress = () => {
-        this.props.navigation.navigate('HomeFarmer');
+        this.props.navigation.navigate('HomeFarmerScreen');
         return true;
     };
 
@@ -31,7 +31,7 @@ class CropDetailScreen extends Component {
             <Container>
                 <Header style={COMMONSTYLES.headerBackgroundColor}>
                     <Left style={{ flex: null }}>
-                        <Button transparent onPress={() => this.props.navigation.navigate("WelcomeScreen")}>
+                        <Button transparent onPress={() => this.props.navigation.navigate("HomeFarmerScreen")}>
                             <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
                         </Button>
                     </Left>

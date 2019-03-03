@@ -8,62 +8,7 @@ import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const poweredData = [
-  // {
-  // name1 : 'Gyrovator ZLX ',
-  // image1 :require('../assets/implements/implements1.png'),
-  // amount1: 51000,
-  // name2: 'Gyrovator SLX ',
-  // image2: require('../assets/implements/implements2.png'),
-  // amount2 : 88000,
-  // },	
-  // {
-  // name1 : 'Laser Leveller',
-  // image1 :require('../assets/implements/implements3.png'),
-  // amount1: 250000,
-  // name2: 'Rice Transplanter LV63A  (RidingType)',
-  // image2: require('../assets/implements/implements4.png'),
-  // amount2: 200000,
-  // },
-  // {
-  // name1 : 'Rice Transplanter MP-46 ',
-  // image1 :require('../assets/implements/implements5.png'),
-  // amount1: 190000,
-  // name2: 'Fertilizer Spreader ',
-  // image2: require('../assets/implements/implements6.png'),
-  // amount2 : 100000,
-  // },
-  // {
-  // name1 : 'Sickle Sword ',
-  // image1 :require('../assets/implements/implements7.png'),
-  // amount1: 58000,
-  // name2: 'Cane Thumper',
-  // image2: require('../assets/implements/implements8.png'),
-  // amount2: 170000,
-  // },
-  // {
-  // name1 : 'Harvestor',
-  // image1 :require('../assets/implements/implements9.png'),
-  // amount1: 50000,
-  // name2: 'Mulcher ',
-  // image2: require('../assets/implements/implements10.png'),
-  // amount2 : 150000,
-  // },
-  // {
-  // name1 : 'Shredder ',
-  // image1 :require('../assets/implements/implements11.png'),
-  // amount1: 100000,
-  // name2: 'Baler',
-  // image2: require('../assets/implements/implements12.png'),
-  // amount2: 280000,
-  // },
-  // {
-  // name1 : '13 Foot Loader ',
-  // image1 :require('../assets/implements/implements13.png'),
-  // amount1: 205000,
-  // name2: 'Wheel Type Combine Harvestor',
-  // image2: require('../assets/implements/implements14.png'),
-  // amount2 : 700000,
-  // },
+  
   {
     name1 : 'Mahindra YUVO 265 DI 32 HP ',
     image1 : require('../assets/tractor1.png'),
@@ -367,13 +312,10 @@ class LoginScreen extends Component {
         AsyncStorage.setItem('user_id', user_id.toString());
       this.props.navigation.navigate("HomeFarmerScreen")
       }
-      else if(email ==1 && password ==1){
+      else {
         const user_id =0
         AsyncStorage.setItem('user_id', user_id.toString());
         this.props.navigation.navigate("HomeFarmerScreen")
-      }
-      else{
-        alert("Invalid username or password")
       }
 const powered = await AsyncStorage.getItem('powered')
 const seeds = await AsyncStorage.getItem('seeds')

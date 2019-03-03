@@ -33,7 +33,7 @@ class BuyScreen extends Component {
   };
 
   onBackPress = () => {
-    this.props.navigation.navigate('WelcomeScreen');
+    this.props.navigation.navigate('ProductsScreen');
     return true;
   };
 
@@ -126,16 +126,16 @@ class BuyScreen extends Component {
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("WelcomeScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("ProductsScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
-          <Body style={STYLES.headerText}>
+          <Body style={{marginLeft:70}}>
             <Text style={COMMONSTYLES.header}>DELIVERY ADDRESS</Text>
           </Body>
         </Header>
-        <Content>
-          
+        <Content >
+          <View style={{marginTop:50}}>
             <View style={STYLES.inputContainer}>
               <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
               <TextInput
@@ -207,39 +207,11 @@ class BuyScreen extends Component {
                 onChangeText={this.handleChangePin}
               />
             </View>
-            {/* <Button block success style={{
-                width: responsiveWidth(35),
-                marginVertical: 10,
-                borderRadius: 10,
-                paddingVertical: 16,
-                justifyContent: 'center',
-                alignItem: 'center'
-              }} onPress={() => {
-                var options = {
-                  description: 'Credits towards consultation',
-                  image: 'https://i.imgur.com/3g7nmJC.png',
-                  currency: 'INR',
-                  key: 'rzp_test_0xtn4Dect7hTHa',
-                  amount: '5000',
-                  name: 'Agri Bezzie',
-                  prefill: {
-                    email: 'support@agribezzie.com',
-                    contact: '7338704208',
-                    name: 'Razorpay Software'
-                  },
-                  theme: { color: '#F37254' }
-                }
-                RazorpayCheckout.open(options).then((data) => {
-                  this.setState({ transaction_id: data.razorpay_payment_id }, () => {
-                    this.handlePayment()
-                  });
-                }).catch((error) => {
-                  // handle failure
-                  // alert(`Error: ${error.code} | ${error.description}`);
-                });
-              }}>
-                <Text>Next</Text>
-              </Button> */}
+             <Button block success style={{width : responsiveWidth(50), marginTop : 30, marginLeft : 100}}
+             onPress={()=>this.props.navigation.navigate("PaymentScreen")}>
+             <Text>Next</Text>
+              </Button> 
+              </View>
         </Content>
       </Container>
     )

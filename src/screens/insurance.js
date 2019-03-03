@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
+import { Linking, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Right, Spinner, List, ListItem, Thumbnail } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
@@ -36,6 +36,10 @@ class InsuranceScreen extends Component {
     this.props.navigation.navigate('HomeFarmerScreen');
     return true;
   };
+  openUrl1() {
+    Linking.openURL("https://canarabank.com/media/1711/kisan-credit-card-scheme-revised-scheme.pdf")
+}
+
 
   render() {
     const items =[
@@ -50,8 +54,8 @@ class InsuranceScreen extends Component {
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
-          <Body style={STYLES.headerText}>
-            <Text style={COMMONSTYLES.header}>INSURANCE</Text>
+          <Body style ={{marginLeft:100}}>
+            <Text style={COMMONSTYLES.header}>INSURANCE/CREDIT</Text>
           </Body>
           {this.state.user_id == 1 ?
           <Right>
@@ -61,17 +65,72 @@ class InsuranceScreen extends Component {
           </Right> : null }
         </Header>
         <Content>
-        {items.map(item => {
-              return (
-          <TouchableOpacity>
-         <Card>
-           <Text>
-             {items.insurance}
-           </Text>
-         </Card>
+        
+          <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>1.KISAN CREDIT CARD SCHEME (KCCS)-REVISED SCHEME </Text>
+            </CardItem>
+          </Card>
          </TouchableOpacity>
-            )
-          })}
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>2. CROP LOANS</Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>3. KISAN SUVIDHA SCHEME </Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>4. KRISHI MITRA CARD SCHEME </Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>5. KISAN TATKAL </Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>6. DEVELOPMENT LOANS FOR PLANTATION/HORTICULTURE </Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>7. FARM FORESTRY LOANS </Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
+
+         <TouchableOpacity onPress={this.openUrl1.bind(this)}>
+        <Card>
+            <CardItem header>
+              <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 22 }}>8. DEVELOPMENT LOANS FOR FARM LEVEL STORAGE STRUCTURES </Text>
+            </CardItem>
+          </Card>
+         </TouchableOpacity>
+
         </Content>
       </Container>
     )

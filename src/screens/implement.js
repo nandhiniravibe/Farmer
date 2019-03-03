@@ -51,7 +51,7 @@ class ImplementsScreen extends Component {
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
-          <Body style={{marginLeft : 30}}>
+          <Body style={{marginLeft : 100}}>
             <Text style={COMMONSTYLES.header}>IMPLEMENTS</Text>
           </Body>
           {this.state.user_id == 2 ?

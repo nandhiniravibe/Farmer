@@ -52,7 +52,7 @@ class Powered extends Component {
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
-          <Body style={{marginLeft : 30}}>
+          <Body style={{marginLeft : 70}}>
             <Text style={COMMONSTYLES.header}>POWERED EQUIPMENTS</Text>
           </Body>
           {this.state.user_id == 2 ?

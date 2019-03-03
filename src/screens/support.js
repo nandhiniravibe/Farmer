@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
+import { Linking, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
 import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Thumbnail, Input, Label, Icon, Left, Body, Right, Switch, Spinner, List, ListItem } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
@@ -63,11 +62,13 @@ class SupportScreen extends Component {
                 <Thumbnail source={require('../assets/man.png')} />
               </Left>
               <Body>
-                <Text>Contact 1</Text>
+                <Text>Dr.Kavith, Assist.Prof TNAU</Text>
                 <Text note>8940480184</Text>
               </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
+              <Right >
+              <TouchableOpacity onPress={() => { Linking.openURL('tel:' + '8940480184') } }>
+                <Icon name="phone" type="FontAwesome" style={{fontSize: 40, color: 'green' }} />
+                </TouchableOpacity>
               </Right>
             </ListItem>
 
@@ -76,11 +77,13 @@ class SupportScreen extends Component {
                 <Thumbnail source={require('../assets/man.png')} />
               </Left>
               <Body>
-                <Text>Contact 2</Text>
-                <Text note>8940480184</Text>
+                <Text>Kisaan Helpline</Text>
+                <Text note>07415538151</Text>
               </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
+              <Right >
+              <TouchableOpacity onPress={() => { Linking.openURL('tel:' + '8940480184') } }>
+                <Icon name="phone" type="FontAwesome" style={{fontSize: 40, color: 'green' }} />
+                </TouchableOpacity>
               </Right>
             </ListItem>
 
@@ -89,11 +92,13 @@ class SupportScreen extends Component {
                 <Thumbnail source={require('../assets/man.png')} />
               </Left>
               <Body>
-                <Text>Contact 3</Text>
-                <Text note>8940480184</Text>
+                <Text>Agriculture Welfare Department</Text>
+                <Text note>01722571553</Text>
               </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
+              <Right >
+              <TouchableOpacity onPress={() => { Linking.openURL('tel:' + '8940480184') } }>
+                <Icon name="phone" type="FontAwesome" style={{fontSize: 40, color: 'green' }} />
+                </TouchableOpacity>
               </Right>
             </ListItem>
 
@@ -101,14 +106,18 @@ class SupportScreen extends Component {
               <Left>
                 <Thumbnail source={require('../assets/man.png')} />
               </Left>
+              
               <Body>
-                <Text>Contact 4</Text>
+                <Text>Dr.Arjun, Agri uni, Coimbatore</Text>
                 <Text note>8940480184</Text>
               </Body>
-              <Right>
-                <Icon name="phone" type="FontAwesome" style={{ color: 'green' }} />
+              <Right >
+              <TouchableOpacity onPress={() => { Linking.openURL('tel:' + '8940480184') } }>
+                <Icon name="phone" type="FontAwesome" style={{fontSize: 40, color: 'green' }} />
+                </TouchableOpacity>
               </Right>
             </ListItem>
+            
           </List>
         </Content>
       </Container>

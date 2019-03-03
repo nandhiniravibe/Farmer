@@ -5,6 +5,7 @@ import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleS
 import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Right, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
+import logoImage from './../assets/logo-home.png';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 
 class MyWorksScreen extends Component {
@@ -47,12 +48,34 @@ class MyWorksScreen extends Component {
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
-          <Body style={STYLES.headerText}>
+          <Body style={{marginLeft:110}}>
             <Text style={COMMONSTYLES.header}>WORK POSTS</Text>
           </Body>
         </Header>
         <Content>
-          <Card style={{marginLeft :17, marginRight : 17}}>
+
+        <View style={STYLES.container}>
+              <Image
+                style={STYLES.logo}
+                source={logoImage}
+                resizeMode={'contain'}
+              />
+            </View>
+
+            <View style={STYLES.btnView}>
+
+              <Button block style={{ backgroundColor: '#2198F5' }} 
+              onPress={() => this.props.navigation.navigate('WorkCreatedScreen')}
+              >
+                <Text>WORKS CREATED BY ME</Text>
+              </Button>
+              <Button block style={{ marginTop: 20, backgroundColor: '#2198F5' }} 
+              onPress={() => this.props.navigation.navigate('WorkAppliedScreen')}
+              >
+                <Text>WORKS APPLIED BY ME</Text>
+              </Button>
+            </View>
+          {/* <Card style={{marginLeft :17, marginRight : 17}}>
             <CardItem header>
               <Text style={{ color: 'blue', fontWeight: 'bold', fontSize: 25 }}> Nandhini Ravi</Text>
             </CardItem>
@@ -98,7 +121,7 @@ class MyWorksScreen extends Component {
             <CardItem>
               <Text> Wage per day : Rs.250</Text>
             </CardItem>
-          </Card>
+          </Card> */}
         </Content>
       </Container>
     )

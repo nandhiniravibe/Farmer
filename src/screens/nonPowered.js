@@ -51,7 +51,7 @@ class NonPowered extends Component {
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
-          <Body style={STYLES.headerText}>
+          <Body style={{marginLeft:100}}>
             <Text style={COMMONSTYLES.header}>NON-POWERED</Text>
           </Body>
           {this.state.user_id == 2 ?
