@@ -72,7 +72,7 @@ class EventsScreen extends Component {
                         </Button>
                     </Left>
                     <Body style={STYLES.headerText}>
-                        <Text style={COMMONSTYLES.header}>EVENS</Text>
+                        <Text style={COMMONSTYLES.header}>EVENTS</Text>
                     </Body>
                     {this.state.user_id == 1 ?
                         <Right>

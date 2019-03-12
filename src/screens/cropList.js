@@ -56,12 +56,6 @@ class CropListScreen extends Component {
                     <Body style={STYLES.headerText}>
                         <Text style={COMMONSTYLES.header}>CROPS</Text>
                     </Body>
-                    {this.state.user_id == 1 ?
-                    <Right>
-                        <Button transparent onPress={() => this.props.navigation.navigate("AddEventsScreen")}>
-                            <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
-                        </Button>
-                    </Right> :null }
                 </Header>
                 <Content>
                     <FlatGrid

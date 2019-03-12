@@ -36,12 +36,7 @@ class HomeFarmerScreen extends Component {
         icon: "shopping-cart",
         routeName: "ProductsScreen"
       },
-      {
-        name: 'CROPS',
-        code: 'rgba(216, 27, 24, 0.78)',
-        icon: "leaf",
-        routeName: "CropListScreen"
-      },
+     
       {
         name: 'NEWS',
         code: 'rgba(105, 175, 75, 0.77)',
@@ -78,6 +73,12 @@ class HomeFarmerScreen extends Component {
         code: 'rgba(40, 125, 215, 0.67)',
         icon: "phone",
         routeName: "DailyTipsScreen"
+      },
+      {
+        name: 'CROPS',
+        code: 'rgba(216, 27, 24, 0.78)',
+        icon: "leaf",
+        routeName: "CropListScreen"
       },
       {
         name: 'INSURANCE',

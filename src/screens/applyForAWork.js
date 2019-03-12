@@ -83,7 +83,7 @@ class ApplyForAWorkScreen extends Component {
             </CardItem>
             <CardItem>
                 <Right>
-                <Button warning onPress={ () => alert('Applied Successfully !!!')} 
+                <Button warning onPress={() => alert('Applied Successfully !!!')} 
                 onPress={() => this.props.navigation.navigate("DailyWorkScreen")}
                 >
                     <Text>
