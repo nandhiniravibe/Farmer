@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {Image,View,ImageBackground,BackHandler,TextInput,AsyncStorage} from 'react-native';
-import PropTypes from 'prop-types';
-import {Card,CardItem,Text,Container,Content,Button,Form,Item,Input,Label,Icon,Header,Left, Body,Picker,Spinner} from 'native-base'
+import {Card,CardItem,Text,Container,Content,Button,Form,Item,Input,Label,Icon,Header,Left, Body,Picker,Spinner, Right} from 'native-base'
 import { STYLES } from '../styles/registration';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
-// import {userRegistration,login,getAllRelationships,} from '../actions';
 
 class RegistrationScreen extends Component {
   constructor(props) {
@@ -21,15 +19,14 @@ class RegistrationScreen extends Component {
     this.handleChangeLastname = this.handleChangeLastname.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleChangeHouse = this.handleChangeHouse.bind(this);
+    this.handleChangeCity = this.handleChangeCity.bind(this);
+    this.handleChangeState = this.handleChangeState.bind(this);
+    this.handleChangePin = this.handleChangePin.bind(this);
   }
   componentWillMount() {
     BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
-    // this.fetchDate();
   };
-
-//   fetchDate() {
-//     this.props.getAllRelationships();
-//   }
 
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
@@ -52,6 +49,22 @@ class RegistrationScreen extends Component {
     this.setState({ email: e });
   };
 
+  handleChangeHouse(e) {
+    this.setState({ house: e });
+  };
+
+  handleChangeCity(e) {
+    this.setState({ city: e });
+  };
+
+  handleChangeState(e) {
+    this.setState({ state: e });
+  };
+
+  handleChangePin(e) {
+    this.setState({ pin: e });
+  };
+
   checkIsEmailUnique() {
     const where = `email = '${this.state.email}'`;
     const queryParams = {
@@ -70,16 +83,6 @@ class RegistrationScreen extends Component {
     })
   };
 
-  // loadAllRelations() {
-  //   const { relationships } = this.props.reducerObj;
-  //   const opitionsArr = [];
-  //   opitionsArr.push(<Picker.Item label="Select Relationship" value="0" />);
-  //   relationships.map((item, index) => {
-  //     opitionsArr.push(<Picker.Item key={index} label={item.relation} value={item.relationship_type} />)
-  //   });
-  //   return opitionsArr;
-  // }
-
   handleChangePassword(e) {
     if (e && e.length >= 5) {
       return this.setState({ password: e, showPasswordErrorMsg: false, validPassword: true })
@@ -96,9 +99,13 @@ class RegistrationScreen extends Component {
   };
 
   handleSubmit() {
-    const { fname, lname, email, password, showPasswordErrorMsg, showIncorrectEmailErrorMsg, showEmailErrorMsg, selectedRelationship } = this.state;
+    const { fname, lname, email, password, house, city, state, pin } = this.state;
     if (!fname) return alert("Please enter Name");
     if (!lname) return alert("Please enter Phone number")
+    if (!house) return alert("Please enter House/Street");
+    if (!city) return alert("Please enter City");
+    if (!state) return alert("Please enter State");
+    if (!pin) return alert("Please enter Pin");
     if (!password) return alert("Please enter Password");
 
     // if (showIncorrectEmailErrorMsg) return alert("Please enter valid Email");
@@ -123,45 +130,65 @@ class RegistrationScreen extends Component {
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>SIGN UP</Text>
           </Body>
-
         </Header>
         <Content>
           <Card transparent style={STYLES.container}>
             <CardItem>
-              <Text style={{ fontSize: responsiveFontSize(2) }}>Welcome to</Text>
+              <Right>
+              {/* <Text style={{ fontSize: responsiveFontSize(2) }}>Welcome to</Text> */}
+              <View style={STYLES.inputContainer2}>
+            <Icon name="language" type="FontAwesome" style={STYLES.inlineIcons} />
+            <Picker 
+              mode="dropdown"
+              placeholder="Select Relationship"
+              placeholderStyle={{ color: "black", }}
+              placeholderIconColor="#007aff"
+              style={{ width: undefined }}
+              selectedValue={this.state.selectedRelationship}
+              onValueChange={(e) => this.setState({ selectedRelationship: e })}            
+            >
+            {/* <Item label="Language" value="key1" /> */}
+            <Item label="English" value="key1" />
+            <Item label="हिंदी" value="key2" />
+            <Item label="தமிழ்" value="key3" />
+            <Item label="తెలుగు" value="key4" />
+            <Item label="മലയാളം" value="key5" />
+            </Picker>
+          </View>
+          </Right>
             </CardItem>
             <CardItem>
               <View>
                 <Image
                   style={STYLES.logo}
-                  source={require("./../assets/logo-home.png")}
+                  source={require("./../assets/tractorIcon.png")}
                   resizeMode={'contain'}
                 />
               </View>
             </CardItem>
           </Card>
-          {this.state.showSpinner && <Spinner color='green' />}
+          
           <View style={STYLES.inputContainer}>
             <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(6) }}
-              placeholder="Name"
+              placeholder="Name *"
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeFirstname}
             />
           </View>
           <View style={STYLES.inputContainer}>
-            <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
+            <Icon name="phone" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(6) }}
-              placeholder="Phone number"
+              placeholder="Phone number *"
               keyboardType = 'numeric'
               underlineColorAndroid="transparent"
               onChangeText={this.handleChangeLastname}
             />
           </View>
           <View style={STYLES.inputContainer}>
-            <Icon name="envelope" type="FontAwesome" style={STYLES.inlineIconsEmail} />
+            <Icon name="envelope" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(6) }}
               placeholder="Email"
@@ -170,17 +197,53 @@ class RegistrationScreen extends Component {
               onBlur={(e) => { this.checkIsValidEmail() }}
             />
           </View>
-          {this.state.showEmailErrorMsg && <View style={{ marginLeft: responsiveWidth(10) }}>
-            <Text style={{ color: 'red', fontSize: responsiveFontSize(1.5) }}>Email Already Exits..!</Text>
-          </View>}
-          {this.state.showIncorrectEmailErrorMsg && <View style={{ marginLeft: responsiveWidth(10) }}>
-            <Text style={{ color: 'red', fontSize: responsiveFontSize(1.5) }}>Please enter valid Email..!</Text>
-          </View>}
+          <View style={STYLES.inputContainer}>
+            <Icon name="address-card" type="FontAwesome" style={STYLES.inlineIcons} />
+            <TextInput
+              style={{ flex: 1, height: responsiveHeight(6) }}
+              placeholder="House/Street *"
+              underlineColorAndroid="transparent"
+              onChangeText={this.handleChangeHouse}
+              onBlur={(e) => { this.checkIsValidEmail() }}
+            />
+          </View>
+          <View style={STYLES.inputContainer}>
+            <Icon name="map-marker" type="FontAwesome" style={STYLES.inlineIcons} />
+            <TextInput
+              style={{ flex: 1, height: responsiveHeight(6) }}
+              placeholder="City *"
+              underlineColorAndroid="transparent"
+              onChangeText={this.handleChangeCity}
+              onBlur={(e) => { this.checkIsValidEmail() }}
+            />
+          </View>
+  
+          <View style={STYLES.inputContainer}>
+            <Icon name="map-pin" type="FontAwesome" style={STYLES.inlineIcons} />
+            <TextInput
+              style={{ flex: 1, height: responsiveHeight(6) }}
+              placeholder="State *"
+              underlineColorAndroid="transparent"
+              onChangeText={this.handleChangeState}
+              onBlur={(e) => { this.checkIsValidEmail() }}
+            />
+          </View>
+
+          <View style={STYLES.inputContainer}>
+            <Icon name="thumb-tack" type="FontAwesome" style={STYLES.inlineIcons} />
+            <TextInput
+              style={{ flex: 1, height: responsiveHeight(6) }}
+              placeholder="Pin code *"
+              keyboardType = 'numeric'
+              underlineColorAndroid="transparent"
+              onChangeText={this.handleChangePin}
+            />
+          </View>
           <View style={STYLES.inputContainer}>
             <Icon name="unlock-alt" type="FontAwesome" style={STYLES.inlineIcons} />
             <TextInput
               style={{ flex: 1, height: responsiveHeight(6) }}
-              placeholder="Password"
+              placeholder="Password *"
               underlineColorAndroid="transparent"
               secureTextEntry={this.state.showPassword}
               onChangeText={this.handleChangePassword}
@@ -191,7 +254,7 @@ class RegistrationScreen extends Component {
           {this.state.showPasswordErrorMsg && <View style={{ marginLeft: responsiveWidth(10) }}>
             <Text style={{ color: 'red', fontSize: responsiveFontSize(1.5) }}>Enter a password of at least 5 characters</Text>
           </View>}
-          <View style={STYLES.inputContainer1}>
+          {/* <View style={STYLES.inputContainer1}>
             <Icon name="users" type="FontAwesome" style={STYLES.inlineIcons} />
             <Picker
               mode="dropdown"
@@ -205,14 +268,11 @@ class RegistrationScreen extends Component {
             <Item label="Vendor" value="key1" />
             <Item label="Farmer" value="key2" />
             </Picker>
-          </View>
+          </View> */}
           <View style={STYLES.btnView}>
-            <Button block success style={STYLES.btns} onPress={this.handleSubmit}>
+            <Button block success style={STYLES.btns} onPress={this.handleSubmit} style={{marginBottom: 20}}>
               <Text>SIGN UP</Text>
             </Button>
-            {/* <Button block success style={STYLES.btns1} onPress={this.handleSubmit}>
-              <Text>SIGN UP AS VENDOR</Text>
-            </Button> */}
           </View>
         </Content>
       </Container>
@@ -221,15 +281,9 @@ class RegistrationScreen extends Component {
 };
 
 RegistrationScreen.propTypes = {
-//   userRegistration: PropTypes.func.isRequired,
-//   login: PropTypes.func.isRequired,
-//   getAllRelationships: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-//   userRegistration,
-//   getAllRelationships,
-//   login
 }, dispatch);
 
 const mapStateToProps = state => ({

@@ -11,9 +11,8 @@ export const STYLES = StyleSheet.create({
     color: '#527a7a'
   },
   logo: {
-    // marginTop: responsiveHeight(1),
-    height: responsiveHeight(27),
-    width: responsiveWidth(70),
+    height: responsiveHeight(30),
+    width: responsiveWidth(50),
   },
   container: {
     backgroundColor: 'white',
@@ -58,7 +57,7 @@ export const STYLES = StyleSheet.create({
   },
   btns: {
     backgroundColor: THEME_COLOR,
-    marginTop: 30,
+    marginTop: 20,
   },
   inlineIcons: {
     fontSize: responsiveFontSize(2),
@@ -78,5 +77,4 @@ export const STYLES = StyleSheet.create({
   headerText: {
     marginLeft: (Platform.OS == 'android') ? responsiveWidth(33) : 0,
   }
-
 });

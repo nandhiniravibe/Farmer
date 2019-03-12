@@ -1,130 +1,110 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { View, ImageBackground, BackHandler, TouchableOpacity, TextInput, StyleSheet, Image, AsyncStorage } from 'react-native';
-import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left, Body, Spinner } from 'native-base';
+import { Card, CardItem, Text, Header, Container, Content, Button, Form, Item, Input, Label, Icon, Left,Right,  Body, Spinner } from 'native-base';
 import { STYLES } from '../styles/login';
 import { COMMONSTYLES, THEME_COLOR } from '../styles/common';
 import { responsiveHeight, responsiveWidth, responsiveFontSize } from 'react-native-responsive-dimensions';
-// import { login,getAllChild } from '../actions';
 
-class Seeds extends Component {
+class SeedsScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPassword: true,
-      email: undefined,
-      password: undefined,
+         user_id :0,
+         seeds: []
     };
     this.onBackPress = this.onBackPress.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangePassword = this.handleChangePassword.bind(this);
-    this.handleSubmitFarmer = this.handleSubmitFarmer.bind(this);
-    this.handleSubmitVendor = this.handleSubmitVendor.bind(this);
   }
+  
   componentWillMount() {
-    BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+    AsyncStorage.getItem('seeds').then((res)=>{
+      const seeds = JSON.parse(res)
+      this.setState({ seeds });
+      this.update();
+      BackHandler.addEventListener('hardwareBackPress', this.onBackPress);
+    })
   }
+
+  async update() {
+    const user_id = await AsyncStorage.getItem('user_id');
+    this.setState({
+    user_id
+    });
+    };
+
   componentWillUnmount() {
     BackHandler.removeEventListener('hardwareBackPress', this.onBackPress);
   }
+
   onBackPress = () => {
-    this.props.navigation.navigate('HomeFarmer');
+    this.props.navigation.navigate('ProductsScreen');
     return true;
   };
-  handleChangeEmail(e) {
-    this.setState({ email: e });
-  };
-  handleChangePassword(e) {
-    this.setState({ password: e });
-  };
-
-  handleSubmitFarmer() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '1' && password == '1') {
-      this.props.navigation.navigate("HomeFarmerScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
-
-  handleSubmitVendor() {
-    const { email, password } = this.state;
-    if (!email) return alert("Please enter Phone number");
-    if (!password) return alert("Please enter Password");
-    if (email == '9876543210' && password == '123456') {
-      this.props.navigation.navigate("HomeVendorScreen")
-    } else {
-      alert(' Please fill out all fields ')
-    }
-  }
 
   render() {
     return (
       <Container>
         <Header style={COMMONSTYLES.headerBackgroundColor}>
           <Left style={{ flex: null }}>
-            <Button transparent onPress={() => this.props.navigation.navigate("WelcomeScreen")}>
+            <Button transparent onPress={() => this.props.navigation.navigate("ProductsScreen")}>
               <Icon name="angle-left" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
             </Button>
           </Left>
           <Body style={STYLES.headerText}>
             <Text style={COMMONSTYLES.header}>SEEDS</Text>
           </Body>
+          {this.state.user_id == 2 ?
+          <Right>
+          <Button transparent onPress={() => this.props.navigation.navigate("AddProductsScreen")}>
+              <Icon name="plus" type="FontAwesome" style={COMMONSTYLES.sideMenuIcon} />
+            </Button>
+          </Right> : null }
         </Header>
         <Content>
-          <Card transparent style={STYLES.container}>
-            <CardItem>
-              {/* <Text style={{ fontSize: responsiveFontSize(2) }}>Welcome to</Text> */}
-            </CardItem>
-            <CardItem>
-              <View>
-                <Image
-                  style={STYLES.logo}
-                  source={require("./../assets/logo-home.png")}
-                  resizeMode={'contain'}
-                />
-              </View>
-            </CardItem>
-          </Card>
-          {this.state.showSpinner && <Spinner color='green' />}
-          <View style={STYLES.inputContainer}>
-            <Icon name="user" type="FontAwesome" style={STYLES.inlineIcons} />
-            <TextInput
-              style={{ flex: 1, height: responsiveHeight(7) }}
-              placeholder="Phone number"
-              keyboardType='numeric'
-              underlineColorAndroid="transparent"
-              onChangeText={this.handleChangeEmail}
-            />
-          </View>
-          <View style={STYLES.inputContainer}>
-            <Icon name="unlock-alt" type="FontAwesome" style={STYLES.inlineIcons} />
-            <TextInput
-              style={{ flex: 1, height: responsiveHeight(7) }}
-              placeholder="Password"
-              underlineColorAndroid="transparent"
-              secureTextEntry={this.state.showPassword}
-              onChangeText={this.handleChangePassword}
-            />
-            <Icon name='eye' type="FontAwesome" style={COMMONSTYLES.passwordEye}
-              onPress={() => this.setState({ showPassword: !this.state.showPassword })} />
-          </View>
-          <View style={STYLES.btnView}>
-            <Button block success style={STYLES.btns} onPress={this.handleSubmitFarmer}>
-              <Text>SIGN IN AS FARMER</Text>
-            </Button>
-            <Button block success style={STYLES.btns} onPress={this.handleSubmitVendor}>
-              <Text>SIGN IN AS VENDOR</Text>
-            </Button>
-            <Text style={STYLES.forgotPassword}
-              onPress={() => this.props.navigation.navigate('ForgotScreen')}
-            >
-              Forgot Password ?
-            </Text>
+        <View>
+            {this.state.seeds.map(item => {
+              return (
+                <View style={styles.container}>
+                  <TouchableOpacity onPress={() => 
+                    this.props.navigation.navigate("ProductDetailScreen", {
+                    name: item.name1,
+                    image: item.image1,
+                    amount: item.amount1,
+                  })
+                  }>
+                    <Card style={styles.card}>
+                      <CardItem style={styles.cardItem}>
+                        <Image
+                          style={styles.icons}
+                          source={item.image1}
+                          resizeMode='stretch'
+                        />
+                        <Text style={{ fontSize: responsiveFontSize(1.7) }}>{item.name1}</Text>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => 
+                    this.props.navigation.navigate("ProductDetailScreen", {
+                    name: item.name2,
+                    image: item.image2,
+                    amount: item.amount2,
+                  })
+                  }>
+                    <Card style={styles.card}>
+                      <CardItem style={styles.cardItem}>
+                        <Image
+                          style={styles.icons}
+                          source={item.image2}
+                          resizeMode='stretch'
+                        />
+                        <Text style={{ fontSize: responsiveFontSize(1.7) }}>{item.name2}</Text>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
+                </View>
+              )
+            })}
           </View>
         </Content>
       </Container>
@@ -132,13 +112,28 @@ class Seeds extends Component {
   }
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: responsiveWidth(94),
+    alignSelf: 'center',
+    marginTop: responsiveHeight(2)
+},
+card: { width: responsiveWidth(45), height: responsiveHeight(28) },
+cardItem: { alignItems: 'center', alignSelf: 'center', flex: 1, flexDirection: 'column' },
+icons: {
+    height: responsiveHeight(20),
+    width: responsiveWidth(35),
+},
+});
+
 const mapDispatchToProps = dispatch => bindActionCreators({
-  // login,
-  // getAllChild
 }, dispatch);
 
 const mapStateToProps = state => ({
   reducerObj: state.reducerObj
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Seeds);
+export default connect(mapStateToProps, mapDispatchToProps)(SeedsScreen);

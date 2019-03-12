@@ -9,11 +9,38 @@ import RegistrationScreen from '../screens/registration';
 import ForgotScreen from '../screens/forgot'
 import HomeFarmerScreen from '../screens/homeFarmer';
 import HomeVendorScreen from '../screens/homeVendor';
+import HomeAdminScreen from '../screens/homeAdmin';
 import PoweredScreen from '../screens/powered';
 import NonPoweredScreen from '../screens/nonPowered';
 import FertilizersScreen from '../screens/fertilizers';
 import SeedsScreen from '../screens/seeds';
-
+import RecycleScreen from '../screens/recycle';
+import NewsScreen from '../screens/news';
+import SupportScreen from '../screens/support';
+import WhetherScreen from '../screens/whether';
+import InsuranceScreen from '../screens/insurance';
+import EventsScreen from '../screens/events';
+import CropSelectionScreen from '../screens/cropSelection';
+import ProductsScreen from '../screens/products';
+import AddEventsScreen from '../screens/addEvents';
+import AddNewsScreen from '../screens/addNews';
+import ProductDetailScreen from '../screens/productDetail';
+import CropListScreen from '../screens/cropList';
+import CropDetailScreen from '../screens/cropDetail';
+import AddProductsScreen from '../screens/addProducts';
+import DailyTipsScreen from '../screens/dailyTips';
+import StepsToGrowScreen from '../screens/stepsToGrow';
+import CropHealthScreen from '../screens/cropHealth';
+import BuyScreen from '../screens/buy';
+import ImplementsScreen from '../screens/implement';
+import DailyWorkScreen from '../screens/dailyWork';
+import NeedWorkersScreen from '../screens/needWorkers';
+import MyWorksScreen from '../screens/myWorks';
+import ApplyForAWorkScreen from '../screens/applyForAWork';
+import PaymentScreen from '../screens/payment';
+import WorkAppliedScreen from '../screens/workApplied';
+import WorkCreatedScreen from '../screens/workCreated';
+import WorkersScreen from '../screens/workers';
 
 const ScenesApp = {
   SplashScreen: {
@@ -45,40 +72,106 @@ const ScenesApp = {
   },
   HomeFarmerScreen: {
     screen: HomeFarmerScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
 },
   HomeVendorScreen: {
     screen: HomeVendorScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
+  },
+  HomeAdminScreen: {
+    screen: HomeAdminScreen,
   },
   PoweredScreen: {
     screen: PoweredScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   NonPoweredScreen: {
     screen: NonPoweredScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   FertilizersScreen: {
     screen: FertilizersScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
   },
   SeedsScreen: {
     screen: SeedsScreen,
-    navigationOptions: {
-      drawerLockMode: 'locked-closed'
-  }
-  }
+  },
+  RecycleScreen: {
+    screen: RecycleScreen,
+  },
+  NewsScreen: {
+    screen: NewsScreen
+  },
+  SupportScreen: {
+    screen: SupportScreen
+  },
+  WhetherScreen: {
+    screen: WhetherScreen
+  },
+  InsuranceScreen: {
+    screen: InsuranceScreen
+  },
+  EventsScreen: {
+    screen: EventsScreen
+  },
+  CropSelectionScreen: {
+    screen: CropSelectionScreen
+  },
+  ProductsScreen: {
+    screen: ProductsScreen
+  },
+  AddEventsScreen: {
+    screen: AddEventsScreen
+  },
+  AddNewsScreen: {
+    screen: AddNewsScreen
+  },
+  ProductDetailScreen: {
+    screen: ProductDetailScreen
+  },
+  CropListScreen: {
+    screen: CropListScreen
+  },
+  CropDetailScreen: {
+    screen: CropDetailScreen
+  },
+  AddProductsScreen: {
+    screen: AddProductsScreen
+  },
+  DailyTipsScreen: {
+    screen: DailyTipsScreen
+  },
+  StepsToGrowScreen: {
+    screen: StepsToGrowScreen
+  },
+  CropHealthScreen: {
+    screen: CropHealthScreen
+  },
+  BuyScreen: {
+    screen: BuyScreen
+  },
+  ImplementsScreen: {
+    screen: ImplementsScreen
+  },
+  DailyWorkScreen: {
+    screen: DailyWorkScreen
+  },
+  NeedWorkersScreen: {
+    screen: NeedWorkersScreen
+  },
+  MyWorksScreen: {
+    screen: MyWorksScreen
+  },
+  ApplyForAWorkScreen: {
+    screen: ApplyForAWorkScreen
+  },
+  PaymentScreen: {
+    screen: PaymentScreen
+  },
+  WorkCreatedScreen: {
+    screen: WorkCreatedScreen
+  },
+  WorkAppliedScreen: {
+    screen: WorkAppliedScreen
+  },
+  WorkersScreen: {
+    screen: WorkersScreen
+  },
 }
 
 const router = createStackNavigator({
